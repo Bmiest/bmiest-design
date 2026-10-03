@@ -54,6 +54,7 @@ Today `tokens.css` is copied byte-for-byte between the three repositories; this 
 - **Race to Dutch First stays neutral**: no bmiest branding, so other guilds can share it without it feeling like one streamer's site. It may use the same underlying design language.
 - Guild colours in the race come from its configuration and belong to the guilds.
 - Character renders of the operator's characters (Shiftheal, Bhikhu) are used on the overlay.
+- **Standing preference (chosen 2026-10-03 in the v2 direction round):** all three products follow the category standard, a dark data product, executed at the craft level of Linear and Vercel (interface finish) and Raider.IO (WoW data presentation). Convention is the commitment: no novelty world on top of it.
 
 ## Evidence on Hand
 

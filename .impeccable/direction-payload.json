@@ -1,0 +1,109 @@
+{
+  "title": "Kies de visuele wereld voor v2",
+  "question": "De worp koos 'Het Raster'. Houden, een alternatief nemen, of opnieuw gooien?",
+  "options": [
+    {
+      "id": "assigned",
+      "label": "Het Raster",
+      "kicker": "THE ROLL",
+      "lineage": "Nederlands modernistisch informatieontwerp (Wim Crouwel, Total Design) en vertrekborden",
+      "thesis": "De race gezet als Nederlands informatieontwerp: het paginaraster heeft negen kolommen, één per boss, dus elke sectie lijnt uit op de race zelf. Weigert het donkere tegeldashboard.",
+      "palette": ["#ff6b00", "#0d1620", "#f2efe8", "#2b3a48"],
+      "materials": ["zichtbaar raster", "vlakke kleurvelden", "één geometrische grotesk + mono cijfers"],
+      "viewport": "Bovenbalk in Hollands oranje met woordmerk, NL|EN en 'bijgewerkt'. Daaronder het klassement als bord: per guild één rij over het 9-kolommenraster, gedode bosses gevuld, de huidige boss als deelvulling met beste %, het rangnummer groot links. Rechts de kolom 'Laatste kills'.",
+      "risk": "Nederlands modernisme kan koel of zakelijk lezen als het oranje veld en het raster niet vol worden doorgezet; het vertrekbord mag geen kostuum worden (geen split-flap-gimmick, alleen rijen die op hun plek herschikken).",
+      "raised": [
+        {"from": "challenger-boarding", "raise": "Een rij die van plaats wisselt schuift op zijn plek en houdt oranje tot je hem gezien hebt."},
+        {"from": "challenger-saville", "raise": "Het getal is de kop: rang en score in displaygrootte, namen secundair."},
+        {"from": "challenger-zoo", "raise": "Eén geometrie: het 9-bossraster stuurt lay-out, race-banen, tabel en grafiek tegelijk."},
+        {"from": "challenger-folio", "raise": "Elke guild op exact dezelfde schaal, zodat vergelijken zonder lezen kan."}
+      ],
+      "hero": "",
+      "board": ""
+    },
+    {
+      "id": "model-pick",
+      "label": "Het Klassement",
+      "kicker": "IMPECCABLE’S PICK",
+      "lineage": "Tour de France-graphics: algemeen klassement, truien en bergprofielen",
+      "thesis": "Elke raid getekend als bergrit: bosses zijn cols op een hoogteprofiel, de koploper draagt de trui.",
+      "palette": ["#ffd200", "#e30613", "#00a651", "#f7f5ef"],
+      "materials": ["hoogteprofiel", "truikleuren", "rennerslijst"],
+      "viewport": "Bovenaan het bergprofiel van de tier met elke guild als renner op de helling; daaronder het klassement als rennerslijst met achterstand op de leider.",
+      "risk": "Mijn eigen topkeuze, en de dichtste bij een sportsite, wat je uitsloot; wielergraphics zijn ook wat veel 'race'-ontwerpen pakken."
+    },
+    {
+      "id": "challenger-boarding",
+      "label": "Instapkaart en gatebord",
+      "verdict": "competitive",
+      "lineage": "reisdocumenten en vertrekborden",
+      "thesis": "Het klassement als gatebord dat live herschikt; elke guild een instapkaart met vakken.",
+      "palette": ["#111111", "#f4f4f0", "#ffb000"],
+      "materials": ["gesegmenteerde kaart", "vaste kolommen"],
+      "viewport": "Gatebord met guilds als vluchten, gesorteerd op stand; een gewijzigde rij blijft oplichten.",
+      "case": "Houdt stand op duidelijkheid (live herschikken is precies de taak), verliest op herkenning: reizen is niet de wereld van raiders.",
+      "risk": "Leest als luchthaven-app in plaats van race."
+    },
+    {
+      "id": "challenger-console",
+      "label": "Donkere ontwikkelaarsconsole",
+      "verdict": "declined",
+      "lineage": "dark-first werkoppervlakken",
+      "palette": ["#16181d", "#8ab4f8"],
+      "materials": ["haarlijnnaden", "panelen"],
+      "case": "Verliest op beide: dit is ongeveer de huidige look, die je te braaf vindt.",
+      "kept": "Secties houden een vaste plek; een verversing wijzigt inhoud, niet de lay-out."
+    },
+    {
+      "id": "challenger-saville",
+      "label": "Factory Records-catalogus",
+      "verdict": "declined",
+      "lineage": "Peter Saville, FAC-nummers",
+      "palette": ["#0b0b0b", "#ffffff"],
+      "materials": ["kleurcodestroken", "puls-lijnen"],
+      "case": "Verliest op beide: gecodeerde labels maken een stand onleesbaar.",
+      "kept": "Het nummer als enige kop."
+    },
+    {
+      "id": "challenger-zoo",
+      "label": "Plattegrond van een dierentuin",
+      "verdict": "declined",
+      "lineage": "gidskaarten met vlakke kleurlobben",
+      "palette": ["#8ed462", "#f5f1e4", "#ff705d"],
+      "materials": ["SVG-kustlijnen"],
+      "case": "Verliest op beide: geen ranglijst in een kaart van lobben.",
+      "kept": "Eén geometrie stuurt lay-out, beeld en toestand."
+    },
+    {
+      "id": "challenger-folio",
+      "label": "Botanisch folio",
+      "verdict": "declined",
+      "lineage": "platen per levensfase op vaste schaal",
+      "palette": ["#f3ecdc", "#2f5d34", "#b3261e"],
+      "materials": ["gravure", "vaste schaal"],
+      "case": "Verliest op beide: crème en italic serif horen niet bij raiders.",
+      "kept": "Alles op exact dezelfde schaal."
+    },
+    {
+      "id": "challenger-specimen",
+      "label": "Variabele-letterspecimen",
+      "verdict": "declined",
+      "lineage": "interactieve type-specimens",
+      "palette": ["#fafafa", "#111111"],
+      "materials": ["schuifregelaars"],
+      "case": "Verliest op beide: letters zijn hier geen onderwerp.",
+      "kept": "Hiërarchie alleen door schaalcontrast."
+    }
+  ],
+  "reroll": {"registers": ["safer", "bolder"]},
+  "canon": true,
+  "canonCard": {
+    "label": "De standaard van de categorie",
+    "thesis": "Een donker data-dashboard zoals Raider.IO en Warcraft Logs, op topniveau uitgevoerd.",
+    "palette": ["#0b0d10", "#1b1f26", "#3fd9a4"],
+    "materials": ["donkere tegels", "tabellen", "grafieken"],
+    "viewport": "Klassement-tegels, tabel per boss en grafieken op een donkere grond.",
+    "risk": "Niet te onderscheiden van de rest, en dicht bij wat je nu 'te braaf' vindt."
+  },
+  "steer": true
+}
