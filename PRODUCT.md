@@ -54,7 +54,7 @@ Today `tokens.css` is copied byte-for-byte between the three repositories; this 
 - **Race to Dutch First stays neutral**: no bmiest branding, so other guilds can share it without it feeling like one streamer's site. It may use the same underlying design language.
 - Guild colours in the race come from its configuration and belong to the guilds.
 - Character renders of the operator's characters (Shiftheal, Bhikhu) are used on the overlay.
-- **Direction history:** on 2026-10-03 the category standard (dark data product at Linear/Vercel finish) was built for the race site first and rejected by the user as too generic and AI-looking. The race site now follows **"Het Klassement"**: Tour de France graphics (general classification, jerseys, stage profiles) lending type, palette, density and one signature move to a working data product. Not a sports or betting site. Overlay and wishlist directions are still open.
+- **Direction history (2026-10-03):** built and rejected for the race site: the category standard (dark data product at Linear/Vercel finish: "too generic, AI-looking") and "Het Klassement" (Tour de France graphics: "still a dashboard, too dark, not WoW, a theme on top"). Chosen from a moodboard: **the overlay's own language grown into a poster**, the leader's current boss as the hero, standings as overlay ribbons, a kills ticker. The user named their own overlay as the reference. More gamer-like is welcome; a generic dashboard is not.
 
 ## Evidence on Hand
 
