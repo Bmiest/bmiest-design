@@ -19,7 +19,7 @@ colors:
   jade-ghost: "rgba(63,217,164,.13)"
   gold: "#d8b263"
   rose: "#d98b8b"
-  live-red: "#e5484d"
+  live-red: "#c93339"
   void-glow: "rgba(150,90,255,.32)"
   hero-dusk: "#1b1030"
   hero-deep-teal: "#0d1a1c"
@@ -229,7 +229,7 @@ Confirmed rejections (from the direction history): the generic dark data dashboa
 **Key Characteristics:**
 - [family] Flat ink scale, Outfit + JetBrains Mono, jade + gold, from the overlay's tokens.css unchanged.
 - [family] Right-edge slant on ribbons, pills, bars, rank blocks and tiles; square corners everywhere else.
-- [family] Colour as meaning: jade = brand/live, gold = leader/first/winner, guild colour = the guild.
+- [family] Colour as meaning: jade = brand/live/OK, gold = earned (leader, first, winner, a new best), live-red = on air only, rose = late, warning or failed, guild colour = the guild.
 - [race] The leader's current boss as the hero art, nothing drawn on it, swapping as the race moves.
 - [race] Broadcast bug + edge-to-edge kills ticker framing the hero; board of ribbons as the standings.
 - [race] Per guild as the one detailed data view: a row per guild, not a table per boss.
@@ -247,8 +247,8 @@ A near-black ink ramp with one cool green voice, one warm gold voice and the gui
 - **Podium Gold** (gold): [family rule, proved here] the leader, the race's first kill and the winner, and nothing else. The leader's ribbon outline and kill count (on the board and in Per guild), the star on a first kill (Per guild cells and Voortgang), gold first-kill labels and counts in the hall of fame, the winner banner's 2px border, trophy and label.
 
 ### Tertiary
-- **Broadcast Red** (live-red): [race; candidate family] on air only: the LIVE block in the bug while a guild is really raiding, and the "Nu live" strip. Lives on `:root` in splash.css because tokens.css is a byte copy of the overlay's; move it to tokens.css when the overlay adopts it.
-- **Faded Rose** (rose): [family] warnings that are not errors: the error capsule's 1px border and the late-data update line (top bar and footer).
+- **Broadcast Red** (live-red): [family] on air only: the LIVE block in the bug while a guild is really raiding, and the "Nu live" strip. #c93339 (darkened from #e5484d on 2026-10-04) so paper text on it reaches 4.6:1. Defined in the overlay's tokens.css, of which the race site's is a byte copy.
+- **Faded Rose** (rose): [family] late, warning or failed, never red: here the error capsule's 1px border and the late-data update line (top bar and footer); on the wishlist dashboard a failed run (rose block with ink-900 text).
 
 ### Neutral
 - **Raid Night Black** (ink-900): page ground, bug name block, ticker band, inactive language block, the pinned guild column's ground, ink text on jade.
@@ -267,11 +267,11 @@ A near-black ink ramp with one cool green voice, one warm gold voice and the gui
 - **Void Glow** (void-glow), **Hero Dusk** (hero-dusk), **Hero Deep Teal** (hero-deep-teal): only the hero ground. A violet radial at the top right, a jade radial (jade at 22%) behind the boss, over a 160deg dusk-to-teal-to-ink linear, faded into ink-900 by a 260px bottom gradient. Web-only; the overlay's bitrate rule forbids gradients on stream.
 
 ### Named Rules
-**The Gold Is Earned Rule.** Gold marks the leader, the race's first kill and the winner. A tag, a hover, a late-data note or a "progress" state is never gold.
+**The Gold Is Earned Rule.** [family] Gold marks something earned: the leader, the race's first kill and the winner here, a new best on the overlay, the single best upgrade on the wishlist. A tag, a hover, a late-data note or a "progress" state is never gold.
 
 **The Jade Is the Race Rule.** Jade is the race brand, live state and the CE marker. Guild colours (from guilds.toml) stay clear of jade and gold.
 
-**The Red Means On Air Rule.** Broadcast red means on air: the LIVE block (only while some guild's live state is really `live`) and the "Nu live" strip of streams that are live now. Raiding itself is jade.
+**The Red Means On Air Rule.** [family] Broadcast red means on air and nothing else; a failure or an error is rose. Here: the LIVE block (only while some guild's live state is really `live`) and the "Nu live" strip of streams that are live now. Raiding itself is jade.
 
 **The Guild Owns Its Best Rule.** A guild's best effort is drawn in its own colour: the best-pull meter, the best bar in its pull strip, "beste x%" in its caption, the frame of its current boss, its Voortgang line and hollow kill nodes.
 
@@ -378,8 +378,8 @@ The overlay's angled card (1px outline, ink-800 body, 22px notch at the bottom r
 ## Do's and Don'ts
 
 ### Do:
-- **Do** take colours, fonts and radii from tokens.css variables only; the one exception is `--live-red` on `:root` in splash.css until the overlay adopts it. tokens.css stays a byte copy of the overlay's.
-- **Do** keep gold for the leader, the race's first kill and the winner; jade for the race brand, live state and the CE marker.
+- **Do** take colours, fonts and radii from tokens.css variables only. tokens.css stays a byte copy of the overlay's (it carries Outfit 800 and `--live-red`).
+- **Do** keep gold for what is earned (here the leader, the race's first kill and the winner); jade for the race brand, live state and the CE marker; red for on air only.
 - **Do** show the leader's current boss (the CE boss once someone won) as a self-hosted alpha cut-out trimmed to the body, with nothing drawn on it, never past 2x its natural size.
 - **Do** mark a guild with a 1-2px outline, a rank block or a slanted chip in its colour, and draw its best effort in that colour.
 - **Do** draw marks as SVG (check, star, trophy, chevron) in the meaning colour.
@@ -399,3 +399,19 @@ The overlay's angled card (1px outline, ink-800 body, 22px notch at the bottom r
 - **Don't** dress a folded or secondary section as a section head.
 - **Don't** add bmiest branding to the race site.
 - **Don't** build it as a generic dark dashboard.
+
+## The family across products
+
+Recorded 2026-10-04, when the overlay's showcase page (Bmiest/bmiest_wow_streaming_theme#5) and the wishlist dashboard (Bmiest/bmiest_wowaudit_wishlist_updater#8) adopted v2. Each product keeps its own DESIGN.md with [family] and [product] tags; [family] rules there must match this file.
+
+- **Tokens:** the overlay's `css/tokens.css` is the source. It loads Outfit 300-800 and defines `--live-red`. The race site's tokens.css is a byte copy. The wishlist's copy is older (it predates Outfit 800 and `--live-red`, which it doesn't use).
+- **Colour meaning:** all three products follow the rules above. On the wishlist, OK and active are jade, the single best upgrade is gold, and a failed run is rose. It never shows red, because it is never live.
+- **Candidate components** first shipped on the overlay:
+  - the slanted jade primary button ("Watch on Twitch");
+  - flush tally strips;
+  - stat and pick ribbons (the character select).
+  - Take their specs from the overlay's DESIGN.md until a second product uses them.
+- **The bug:** the overlay adds a jade mark block and a jade guild slot. The wishlist puts the run status in the bug instead of LIVE.
+- **Small value differences, not rules:**
+  - void glow: 24% on the overlay, 32% on the race site;
+  - ticker loop: 56s on the overlay, 48s on the race site.
