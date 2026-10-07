@@ -8,19 +8,20 @@ web
 
 ## Stack
 
-Static HTML, CSS and JavaScript with no build step and no framework, like the three products it serves. Published with GitHub Pages at `design.bmiest.be`; repository `Bmiest/bmiest-design`. Each product keeps a copy of the shared files; a CI check in each product repo flags drift from this repo.
+Static HTML, CSS and JavaScript with no build step and no framework, like the four products it serves. Published with GitHub Pages at `design.bmiest.be`; repository `Bmiest/bmiest-design`. Each product keeps a copy of the shared files; a CI check in each product repo flags drift from this repo.
 
 ## Users
 
-This repository holds the shared design language (v2) for three products with different audiences:
+This repository holds the shared design language (v2) for four products with different audiences:
 
 - **Stream overlay** (`Bmiest/bmiest_wow_streaming_theme`, `streamoverlay.bmiest.be`): Twitch viewers following bmiest's World of Warcraft raids. They watch on a PC, often on a second monitor next to their own game, or on a phone, so the overlay is usually seen small and at a glance. The operator (bmiest) sets it up in OBS.
-- **Race to Dutch First** (`reniersworx/racetodutchfirst`, `racetodutchfirst.bmiest.be`): Dutch WoW raiders and their guilds checking how the race to Cutting Edge stands, often on a phone around raid nights. Built for the wider Dutch WoW community too, where possible.
+- **Race to Dutch First** (`reniersworx/racetodutchfirst`, private; `racetodutchfirst.nl`): Dutch WoW raiders and their guilds checking how the race to Cutting Edge stands, often on a phone around raid nights. Built for the wider Dutch WoW community too, where possible.
+- **bmiest.be** (`Bmiest/bmiest_landing`, `bmiest.be`): bmiest's front door, a hub of the tools and the stream for viewers, the Dutch WoW community and anyone curious about the projects. Shows the work running (live race standing, LIVE state, real screenshots); no real name, no day job.
 - **Wishlist updater dashboard** (`Bmiest/bmiest_wowaudit_wishlist_updater`, `wishlistupdater.bmiest.be`): the operator (Shiftheal, Holy Priest, Ragnaros EU), deciding which gear to wish for and where to spend crests.
 
 ## Product Purpose
 
-Give the three products one design language, version 2, that improves on the current one. Success means:
+Give the four products one design language, version 2, that improves on the current one. Success means:
 
 - the products are recognisably one family (with the race site as the deliberate exception, see Brand Commitments);
 - new parts, built by the operator or by agents (Claude, the Paperclip team), fit the system without guessing or a redesign;
@@ -33,8 +34,8 @@ Built by a raiding streamer, from live raid data (Raider.IO, Warcraft Logs, QE L
 ## Operating Context
 
 - The overlay runs as OBS browser sources on a 2560×1440 canvas from a 3440×1440 ultrawide, broadcast to Twitch; it is not interactive on stream.
-- Raid nights are Wednesday and Sunday, 20:00–23:00 (Europe/Brussels); the race site refreshes every 30 minutes then, every 2 hours otherwise.
-- All three are hosted on GitHub Pages; merges to main deploy.
+- Raid nights are Wednesday and Sunday, 20:00–23:00 (Europe/Brussels); the race site fetches every 5 minutes then.
+- The overlay, bmiest.be and the wishlist are hosted on GitHub Pages; Race to Dutch First runs self-hosted on the homelab (a container fetching every 5 minutes on raid evenings). Merges to main deploy.
 - Agents build features from written instructions (`CLAUDE.md`, `DESIGN.md`) in each repository.
 
 ## Capabilities and Constraints
@@ -46,11 +47,11 @@ Binding:
 
 In place today but not declared binding for v2: a strict Content Security Policy on the race site (no inline scripts or styles, only Google Fonts as an external source) and DOM building without `innerHTML` for names from external APIs.
 
-Today `tokens.css` is copied byte-for-byte between the three repositories; this repository becomes its source.
+Today `tokens.css` is copied byte-for-byte between the products from the overlay (the race site's copy omits the Google Fonts `@import` because it self-hosts its fonts); this repository becomes its source. DESIGN.md here is the family record; each product's own DESIGN.md tags its rules [family] or [product].
 
 ## Brand Commitments
 
-- **bmiest** is the streamer brand (Twitch channel `bmiest`). The overlay and the wishlist dashboard carry it.
+- **bmiest** is the streamer brand (Twitch channel `bmiest`). The overlay, bmiest.be and the wishlist dashboard carry it. The person behind bmiest is not shown: no real name, no day job, no reniersworx link.
 - **Race to Dutch First stays neutral**: no bmiest branding, so other guilds can share it without it feeling like one streamer's site. It may use the same underlying design language.
 - Guild colours in the race come from its configuration and belong to the guilds.
 - Character renders of the operator's characters (Shiftheal, Bhikhu) are used on the overlay.
@@ -59,7 +60,7 @@ Today `tokens.css` is copied byte-for-byte between the three repositories; this 
 ## Evidence on Hand
 
 - Live data from Raider.IO, Warcraft Logs, QE Live, StreamElements and DecAPI; recorded fixtures in each product's tests.
-- The three live sites and the overlay's demo modes (`?demo=1`) as the incumbent implementation.
+- The four live sites and the overlay's demo modes (`?demo=1`) as the incumbent implementation.
 - No testimonials, viewer numbers beyond the live counters, or press. Don't invent them.
 
 ## Product Principles
