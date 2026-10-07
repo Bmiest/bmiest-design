@@ -1,13 +1,42 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-04T00:11:12+00:00",
-  "title": "Design System: Race to Dutch First",
+  "generatedAt": "2026-10-08T00:00:00+02:00",
+  "title": "Design System: bmiest design language v2",
   "extensions": {
     "designLanguage": {
       "version": 2,
-      "surface": "site/index.html",
       "familyRepo": "Bmiest/bmiest-design",
-      "scopeNote": "family = shared v2 language proved here (overlay tokens + forms); race = this product only.",
+      "scopeNote": "This file holds only what is shared. Each product keeps its own DESIGN.md with [family] and [product] tags; this file wins when they disagree. A part becomes [family] once two products ship it.",
+      "products": [
+        {
+          "name": "Stream overlay",
+          "repo": "Bmiest/bmiest_wow_streaming_theme",
+          "host": "streamoverlay.bmiest.be",
+          "brand": "bmiest",
+          "mode": "Experience (on stream), Persuade (showcase)"
+        },
+        {
+          "name": "bmiest.be",
+          "repo": "Bmiest/bmiest_landing",
+          "host": "bmiest.be",
+          "brand": "bmiest",
+          "mode": "Persuade"
+        },
+        {
+          "name": "Wishlist dashboard",
+          "repo": "Bmiest/bmiest_wowaudit_wishlist_updater",
+          "host": "wishlistupdater.bmiest.be",
+          "brand": "bmiest",
+          "mode": "Operate"
+        },
+        {
+          "name": "Race to Dutch First",
+          "repo": "reniersworx/racetodutchfirst (private)",
+          "host": "racetodutchfirst.nl",
+          "brand": "neutral",
+          "mode": "Read / Operate"
+        }
+      ],
       "changeLog": [
         {
           "date": "2026-10-04",
@@ -17,6 +46,14 @@
             "6de594d"
           ],
           "change": "Below the hero: variant B 'per guild' + variant A's edge-to-edge ticker. Removed the per-boss table, phone boss cards and current-boss cards (rcard) from the race site; added Per guild, reworked Voortgang, folded Hall of fame, one drawn disclosure chevron; board label wraps with the raiding badge on it."
+        },
+        {
+          "date": "2026-10-08",
+          "change": "Family record rewritten from four shipped products; replaces the race copy."
+        },
+        {
+          "date": "2026-10-08",
+          "change": "Family record rewritten from four shipped products; replaces the race copy."
         }
       ]
     },
@@ -25,29 +62,7 @@
         "role": "primary",
         "displayName": "Mistweaver Jade",
         "scope": "family",
-        "tonalRamp": [
-          "oklch(15% 0.15 165)",
-          "oklch(25% 0.15 165)",
-          "oklch(35% 0.15 165)",
-          "oklch(48% 0.15 165)",
-          "oklch(60% 0.15 165)",
-          "oklch(72% 0.15 165)",
-          "oklch(84% 0.15 165)",
-          "oklch(95% 0.15 165)"
-        ],
-        "purpose": "Race brand and live state; CE marker, kill check, links, disclosure chevron, focus. Raid-night columns at 4.5%."
-      },
-      "jade-ghost": {
-        "role": "primary",
-        "displayName": "Jade Ghost",
-        "scope": "family",
-        "purpose": "Link underlines and text selection only."
-      },
-      "jade-deep": {
-        "role": "primary",
-        "displayName": "Deep Jade",
-        "scope": "race",
-        "purpose": "The dashed CE (finish) line on the Voortgang chart.",
+        "purpose": "The brand and what is selected, active or OK: bug mark and day blocks, the active block of any flush switch, a selected pick's outline and subline, the primary button, the ticker label and top edge, section-head caps, the kill check, links, the disclosure chevron, the CE marker, focus rings.",
         "tonalRamp": [
           "oklch(15% 0.15 165)",
           "oklch(25% 0.15 165)",
@@ -59,10 +74,33 @@
           "oklch(95% 0.15 165)"
         ]
       },
+      "jade-deep": {
+        "role": "primary",
+        "displayName": "Deep Jade",
+        "scope": "family",
+        "purpose": "A quieter jade for finish lines and season ends that should not read as live (race CE and season-end lines, the wishlist's viewed history row and default meter fill).",
+        "tonalRamp": [
+          "oklch(15% 0.15 165)",
+          "oklch(25% 0.15 165)",
+          "oklch(35% 0.15 165)",
+          "oklch(48% 0.15 165)",
+          "oklch(60% 0.15 165)",
+          "oklch(72% 0.15 165)",
+          "oklch(84% 0.15 165)",
+          "oklch(95% 0.15 165)"
+        ]
+      },
+      "jade-ghost": {
+        "role": "primary",
+        "displayName": "Jade Ghost",
+        "scope": "family",
+        "purpose": "Link underlines and text selection only."
+      },
       "gold": {
         "role": "secondary",
         "displayName": "Podium Gold",
         "scope": "family",
+        "purpose": "Earned, and nothing else: race leader, first kill and winner; a new best; the wishlist's single best upgrade; Cutting Edge and a first Dutch kill on bmiest.be.",
         "tonalRamp": [
           "oklch(15% 0.1 85)",
           "oklch(25% 0.1 85)",
@@ -78,13 +116,14 @@
         "role": "tertiary",
         "displayName": "Broadcast Red",
         "scope": "family",
-        "definedIn": "overlay css/tokens.css (race site: byte copy)",
-        "purpose": "On air only: LIVE block and the Nu live strip; failures are rose. #c93339 (darkened from #e5484d on 2026-10-04) so paper on it is 4.6:1."
+        "purpose": "On air, and nothing else: the LIVE block, the primary while the channel is live, a live ring on a head tile, an 'n live' block. Paper on it 4.6:1. A ground or a ring, never small text on ink.",
+        "definedIn": "overlay css/tokens.css (byte copy in every product)"
       },
       "rose": {
         "role": "tertiary",
         "displayName": "Faded Rose",
         "scope": "family",
+        "purpose": "Failed, error or stale: a failed run block (ink-900 text), an error panel's 1px border, a staleness warning. Never red.",
         "tonalRamp": [
           "oklch(15% 0.08 20)",
           "oklch(25% 0.08 20)",
@@ -100,6 +139,7 @@
         "role": "neutral",
         "displayName": "Raid Night Black",
         "scope": "family",
+        "purpose": "Page ground, the bug's name block, the ticker band, inactive switch blocks, ink text on jade, gold and class colours.",
         "tonalRamp": [
           "#0a0b0d",
           "#0e1014",
@@ -115,203 +155,246 @@
         "role": "neutral",
         "displayName": "Table Ink",
         "scope": "family",
-        "purpose": "Per guild cells, Voortgang chart well, hall-of-fame raiders table well."
+        "purpose": "Wells, cells, tile bodies, drop panels."
       },
       "ink-800": {
         "role": "neutral",
         "displayName": "Panel Ink",
-        "scope": "family"
+        "scope": "family",
+        "purpose": "Ribbon and pick bodies, panels, strip values."
       },
       "ink-750": {
         "role": "neutral",
         "displayName": "Raised Ink",
-        "scope": "family"
+        "scope": "family",
+        "purpose": "Pills, loot rows, strip keys, boss-head tiles, a selected pick's body, popovers."
       },
       "ink-700": {
         "role": "neutral",
         "displayName": "Rule Ink",
         "scope": "family",
-        "purpose": "1px borders, cell borders, chart grid, hairlines, and the track under every meter (Per guild best-pull meter)."
+        "purpose": "1px borders, rules, chart grids, hairlines, meter tracks on dense rows."
       },
       "ink-600": {
         "role": "neutral",
         "displayName": "Outline Ink",
-        "scope": "family"
+        "scope": "family",
+        "purpose": "The 1px slanted outline of ribbons and picks, loot-row hover, dashed empty states."
       },
       "ink-500": {
         "role": "neutral",
         "displayName": "Muted Ink",
-        "scope": "family"
+        "scope": "family",
+        "purpose": "Plain bars; the popover's 1px border."
       },
       "ink-400": {
         "role": "neutral",
-        "displayName": "Muted Ink Light",
-        "scope": "family"
+        "displayName": "Muted Ink",
+        "scope": "family",
+        "purpose": "Initials on boss heads, a pick's outline on hover, the popover trigger's dotted underline."
       },
       "ink-300": {
         "role": "neutral",
         "displayName": "Caption Grey",
-        "scope": "family"
+        "scope": "family",
+        "purpose": "Secondary meta, axis labels, inactive switch text, hints."
       },
       "ink-200": {
         "role": "neutral",
         "displayName": "Soft Grey",
-        "scope": "family"
+        "scope": "family",
+        "purpose": "Pill text, strip keys, table heads, timestamps."
       },
       "paper": {
         "role": "neutral",
         "displayName": "Paper",
         "scope": "family",
-        "purpose": "Primary text; never pure white (encoder clipping on the overlay)."
+        "purpose": "Primary text. Never pure white."
       },
       "paper-dim": {
         "role": "neutral",
         "displayName": "Faded Paper",
-        "scope": "family"
+        "scope": "family",
+        "purpose": "Leads, body copy, ticker body."
+      },
+      "track": {
+        "role": "neutral",
+        "displayName": "Track",
+        "scope": "family",
+        "purpose": "The unfilled part of a meter or race track, paper at 8%. Not in tokens.css; the wishlist defines --track, the race uses rgba(255,255,255,.09) inline."
       },
       "void-glow": {
         "role": "neutral",
         "displayName": "Void Glow",
-        "scope": "race",
-        "purpose": "Hero ground only: violet radial at top right. Web only."
+        "scope": "family",
+        "purpose": "Hero atmosphere behind boss art only; 24% overlay, 32% race hero, 28% bmiest.be and an earned Hall of fame stage. Web only."
       },
       "hero-dusk": {
         "role": "neutral",
         "displayName": "Hero Dusk",
-        "scope": "race",
-        "purpose": "Hero ground linear, start."
+        "scope": "family",
+        "purpose": "Start of the dusk-to-teal-to-ink linear behind a full hero. Web only."
       },
       "hero-deep-teal": {
         "role": "neutral",
         "displayName": "Hero Deep Teal",
-        "scope": "race",
-        "purpose": "Hero ground linear, middle."
+        "scope": "family",
+        "purpose": "Middle of the hero linear. Web only."
       }
     },
     "typographyMeta": {
       "display": {
         "displayName": "Display",
-        "purpose": "The hero question, once per page; uppercase, max 12ch.",
-        "scope": "race"
+        "purpose": "Once per page, uppercase, balanced; the second half may be jade. Products set their own size (88px race hero, 112px 'BMIEST')."
       },
       "headline": {
-        "displayName": "Section head",
-        "purpose": "Uppercase section heads (Voortgang, Per guild) behind a slanted jade cap.",
-        "scope": "family"
+        "displayName": "Headline",
+        "purpose": "Section heads and entry titles, uppercase, behind a 14px slanted jade cap."
       },
       "headline-sub": {
-        "displayName": "Subsection head",
-        "purpose": "One step down (Raiders), 11px cap.",
-        "scope": "family"
-      },
-      "winner": {
-        "displayName": "Winner",
-        "purpose": "Winning guild name in the winner banner.",
-        "scope": "race"
+        "displayName": "Headline sub",
+        "purpose": "One step down, behind an 11px cap."
       },
       "lead": {
         "displayName": "Lead",
-        "purpose": "Hero lead line, max 40ch.",
-        "scope": "race"
+        "purpose": "One line under a display, max 34-40ch, paper-dim; 17px on phones."
       },
-      "title": {
-        "displayName": "Title",
-        "purpose": "Hall-of-fame boss names.",
-        "scope": "family"
-      },
-      "fold": {
-        "displayName": "Fold title",
-        "purpose": "Title of a folded section (Hall of fame), with an ink-300 hint; not a section head.",
-        "scope": "race"
+      "pick-name": {
+        "displayName": "Pick name",
+        "purpose": "Names in a pick list; 15-16px on phones."
       },
       "ribbon": {
-        "displayName": "Ribbon name",
-        "purpose": "Guild names on board ribbons.",
-        "scope": "family"
+        "displayName": "Ribbon",
+        "purpose": "Names on ribbons; 16px on dense lists, 14px under 400px."
       },
       "body": {
         "displayName": "Body",
-        "purpose": "One-line captions, tables (13px), ticker (15px).",
-        "scope": "family"
+        "purpose": "Copy and ticker items; 14px on phones."
+      },
+      "button": {
+        "displayName": "Button",
+        "purpose": "The primary button, uppercase."
+      },
+      "loot": {
+        "displayName": "Loot",
+        "purpose": "Loot rows, uppercase."
       },
       "bug": {
         "displayName": "Bug",
-        "purpose": "Broadcast bug blocks, uppercase.",
-        "scope": "race"
+        "purpose": "The bug's blocks, uppercase; LIVE at 13px/.14em; 12-13px on phones."
       },
       "label": {
         "displayName": "Label",
-        "purpose": "Pills, language blocks, Per guild pulls column head; uppercase.",
-        "scope": "family"
+        "purpose": "Pills, switch blocks, strip keys, table heads, nav heads; uppercase."
       },
       "label-micro": {
-        "displayName": "Micro label",
-        "purpose": "Raid rows, role labels, first-kill labels, raiding badges; uppercase.",
-        "scope": "family"
-      },
-      "numeric-board": {
-        "displayName": "Board count",
-        "purpose": "Kill counts on the board.",
-        "scope": "race"
+        "displayName": "Label micro",
+        "purpose": "Role rows, tags, badges; uppercase."
       },
       "numeric": {
         "displayName": "Numeric",
-        "purpose": "Every compared number, tabular figures; Per guild cell values 12px, chart axes 11px.",
-        "scope": "family"
+        "purpose": "Every number read as a value or compared; products add larger steps (race board 32px)."
       }
     },
-    "shadows": [],
+    "shadows": [
+      {
+        "name": "one-float",
+        "value": "0 8px 20px -6px rgba(0,0,0,.7)",
+        "purpose": "The One Float Rule: only the popover that floats over content it doesn't belong to (race kill-rank popover)."
+      }
+    ],
     "outlines": [
-      {
-        "name": "current-boss-cell",
-        "value": "inset 0 0 0 1px var(--guild)",
-        "purpose": "Per guild: frames a guild's current boss on ink-800 (outline, not elevation)."
-      },
-      {
-        "name": "raid-divider",
-        "value": "-4px 0 0 -3px var(--ink-600)",
-        "purpose": "Per guild: 1px rule left of the first boss of a later raid."
-      },
-      {
-        "name": "live-dot-ring",
-        "value": "0 0 0 2px var(--paper)",
-        "purpose": "Ring on the LIVE dot in the bug."
-      },
       {
         "name": "focus",
         "value": "outline: 2px solid var(--jade); outline-offset: 3px",
         "purpose": "Every focusable element."
       },
       {
-        "name": "empty-cell",
-        "value": "1px dashed var(--ink-750)",
-        "purpose": "Per guild: an untried boss."
+        "name": "live-dot-ring",
+        "value": "0 0 0 2px var(--paper)",
+        "purpose": "Ring on the LIVE dot."
+      },
+      {
+        "name": "live-head-ring",
+        "value": "inset 0 0 0 2px var(--live-red)",
+        "purpose": "A live stream's head tile in a pick."
+      },
+      {
+        "name": "owner-outline",
+        "value": "inset 0 0 0 1px var(--guild) | var(--gold)",
+        "purpose": "Marks a guild's cell or an earned item; an outline, not elevation."
+      },
+      {
+        "name": "current-foot",
+        "value": "inset 0 -2px 0 var(--jade)",
+        "purpose": "The current footer link."
+      },
+      {
+        "name": "empty-state",
+        "value": "1px dashed var(--ink-600) | var(--ink-750)",
+        "purpose": "Empty states only; every other border is solid."
       }
     ],
     "shapes": [
       {
-        "name": "slant-ribbon",
-        "value": "polygon(0 0, 100% 0, calc(100% - 11px) 100%, 0 100%)"
+        "name": "slant-2",
+        "value": "polygon(0 0, 100% 0, calc(100% - 2px) 100%, 0 100%)",
+        "purpose": "Hairline marks: a race track under a ribbon."
       },
       {
-        "name": "slant-accent",
-        "value": "10px trailing cut",
-        "purpose": "Ribbon rank block; Per guild guild block."
+        "name": "slant-3",
+        "value": "polygon(0 0, 100% 0, calc(100% - 3px) 100%, 0 100%)",
+        "purpose": "Guild chips, standings rank blocks."
       },
       {
-        "name": "slant-pill",
-        "value": "6px trailing cut",
-        "purpose": "Pills, raid-frame bars, boss heads."
+        "name": "slant-4",
+        "value": "polygon(0 0, 100% 0, calc(100% - 4px) 100%, 0 100%)",
+        "purpose": "Subsection cap, 28px boss heads."
       },
       {
-        "name": "slant-cap",
-        "value": "5px / 4px trailing cut",
-        "purpose": "Section-head cap (5px) / Raiders cap (4px)."
+        "name": "slant-5",
+        "value": "polygon(0 0, 100% 0, calc(100% - 5px) 100%, 0 100%)",
+        "purpose": "Section-head cap, tags, lane race-track segments, footer mark."
       },
       {
-        "name": "slant-chip",
-        "value": "3px trailing cut",
-        "purpose": "Guild chips."
+        "name": "slant-6",
+        "value": "polygon(0 0, 100% 0, calc(100% - 6px) 100%, 0 100%)",
+        "purpose": "Pills, meters, bars, 40-52px boss heads, raid-frame cells, step numbers, the to-top block."
+      },
+      {
+        "name": "slant-8",
+        "value": "polygon(0 0, 100% 0, calc(100% - 8px) 100%, 0 100%)",
+        "purpose": "Strip values, the play block, a boss tag's last block."
+      },
+      {
+        "name": "slant-10",
+        "value": "polygon(0 0, 100% 0, calc(100% - 10px) 100%, 0 100%)",
+        "purpose": "Inner bodies: ribbon key blocks, guild blocks, pick head tiles, caption plates."
+      },
+      {
+        "name": "slant-11",
+        "value": "polygon(0 0, 100% 0, calc(100% - 11px) 100%, 0 100%)",
+        "purpose": "Ribbon and pick outlines."
+      },
+      {
+        "name": "slant-12",
+        "value": "polygon(0 0, 100% 0, calc(100% - 12px) 100%, 0 100%)",
+        "purpose": "Buttons: the primary and loot rows."
+      },
+      {
+        "name": "slant-16",
+        "value": "polygon(0 0, 100% 0, calc(100% - 16px) 100%, 0 100%)",
+        "purpose": "Poster plates (bmiest.be tool plates)."
+      },
+      {
+        "name": "slant-22",
+        "value": "polygon(0 0, 100% 0, calc(100% - 22px) 100%, 0 100%)",
+        "purpose": "Frames: screenshot frames, specimen panels, the rcard notch."
+      },
+      {
+        "name": "outline-construction",
+        "value": "outer slanted clip 1px larger than the inner (padding:1px on the outline colour)",
+        "purpose": "Ribbon, pick and plate outlines."
       },
       {
         "name": "disclose-chevron",
@@ -320,16 +403,21 @@
       }
     ],
     "heroGround": {
-      "scope": "race",
+      "scope": "family (web only)",
       "value": "radial-gradient(60% 70% at 74% 42%, rgba(63,217,164,.22), transparent 70%), radial-gradient(50% 60% at 96% 8%, rgba(150,90,255,.32), transparent 70%), linear-gradient(160deg, #1b1030 0%, #0d1a1c 55%, var(--ink-900) 100%)",
-      "fade": "260px bottom gradient into ink-900",
-      "note": "Web only; the overlay forbids gradients."
+      "source": "race hero; void strength is per-product tuning (24/28/32%), not a rule",
+      "note": "Only behind boss art. The overlay's stream pages carry no gradients (The Bitrate Rule)."
     },
     "motion": [
       {
         "name": "ease",
         "value": "cubic-bezier(.22,.61,.36,1)",
-        "purpose": "All transitions (tokens.css)."
+        "purpose": "Hover and small state changes (tokens.css)."
+      },
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(.16,1,.3,1)",
+        "purpose": "Anything that travels: stage wipe, track run, row slide, card arrival. Used by race and bmiest.be; not yet in tokens.css."
       },
       {
         "name": "t-fast",
@@ -347,249 +435,341 @@
       {
         "name": "live-pulse",
         "value": "1.6s, opacity to .3 at 50%",
-        "purpose": "Live dots only."
+        "purpose": "The LIVE dot only."
       },
       {
         "name": "ticker-run",
-        "value": "48s linear infinite, translateX(-50%)",
-        "purpose": "Kills ticker; pauses on hover/focus; off under reduced motion."
+        "value": "translateX(-50%) linear infinite over --tk-run (about 58px/s from content length)",
+        "purpose": "Kills ticker; pauses on hover/focus; static scrollable row under reduced motion."
       },
       {
-        "name": "disclose",
-        "value": "transform var(--t-fast) var(--ease)",
-        "purpose": "Chevron turn on open/close."
+        "name": "row-slide",
+        "value": "FLIP, 650ms",
+        "purpose": "Swapped rows slide once when the data moves."
+      },
+      {
+        "name": "stage-wipe",
+        "value": "620ms var(--ease-out), leading edge leaning down-right",
+        "purpose": "bmiest.be stage wipe; race news card 420ms."
       }
     ],
     "breakpoints": [
       {
-        "name": "phone-narrow",
-        "value": "400px"
+        "name": "narrow",
+        "value": "400px",
+        "purpose": "Gutters 12px; ribbon names 14px."
       },
       {
         "name": "phone",
-        "value": "480px"
-      },
-      {
-        "name": "sheets",
-        "value": "600px",
-        "purpose": "Below: Per guild scrolls sideways (min 1120px, pinned guild column 150px); Voortgang legend instead of line-end names."
-      },
-      {
-        "name": "sections",
         "value": "720px",
-        "purpose": "Page gutters 16px, section gap 32px, winner stacks."
+        "purpose": "Gutters 16px, sections 32px apart, bug and switches 34px (720-900px per product)."
       },
       {
-        "name": "hero-compact",
-        "value": "900px"
+        "name": "stage",
+        "value": "1100px",
+        "purpose": "bmiest.be: one entry on the stage from here up."
       },
       {
         "name": "hero-art-band",
         "value": "1180px",
-        "purpose": "At or below: boss art becomes a band above the title."
+        "purpose": "Race: at or below, boss art becomes a band above the title."
       },
       {
         "name": "container",
-        "value": "1320px max width"
+        "value": "1320-1360px max width"
+      },
+      {
+        "name": "floor",
+        "value": "360px",
+        "purpose": "Everything works here (bmiest.be at 350px)."
       }
     ],
     "bossArt": {
-      "scope": "race",
-      "source": "site/img/boss/*.png, self-hosted RGBA cut-outs trimmed to the body by scripts/boss-cutouts.py, provenance in the PNG (impeccable:prompt)",
+      "scope": "family",
+      "source": "self-hosted alpha cut-outs trimmed to the body by the race site's boss-cutouts script, provenance embedded (impeccable embed-prompt), mapped in bossart.js; other products keep a trimmed copy of the map",
       "maxScale": "2x natural height (--nat-h)",
-      "pair": "up to two bodies, 6% gap, 47% each",
-      "wide": "single render wider than 2:1 takes the field right of the title above 1180px",
-      "mask": "feet fade: linear-gradient(#000 78%, transparent)"
+      "pair": "a council shows both bodies unless one is under 40% of its partner's height",
+      "mask": "feet fade: linear-gradient(#000 78-82%, transparent); nothing drawn on the art",
+      "headCrop": "object-position: 50% 0 on boss heads and pick head tiles"
     },
-    "voortgang": {
-      "scope": "race",
-      "raidNights": "days with a pull or kill in race.json, shaded rgba(63,217,164,.045) (jade at 4.5%)",
-      "ceLine": "jade-deep, dasharray 4 5",
-      "firstKill": "gold star, ink-850 stroke",
-      "kill": "hollow node r=4, ink-850 fill, 2px guild ring",
-      "lineEnds": "guild name 700 14px guild colour + x/9 mono 500 12px paper-dim (wide); legend on phones",
-      "leaderLine": "3px, drawn last; others 2.25px"
+    "fonts": {
+      "tokens": "tokens.css: colours, families, radii, spacing, motion; byte copy between products; loads no fonts",
+      "selfHosted": "fonts.css: Outfit 300-800 + JetBrains Mono 400-700, latin + latin-ext woff2, SIL OFL (race #65); others still @import Google Fonts from tokens.css",
+      "holy": "#ffffff exists in tokens.css for the overlay's v1 stream pages only"
     }
   },
   "components": [
     {
       "name": "Broadcast Bug",
       "kind": "nav",
-      "refersTo": "bug-title",
-      "description": "[race] Flush square blocks: LIVE (only while a guild raids), the name, the race day in jade.",
-      "html": "<div class=\"ds-bug\"><span class=\"ds-bug__live\"><span class=\"ds-bug__dot\"></span>Live</span><span class=\"ds-bug__title\">Race to Dutch First</span><span class=\"ds-bug__day\">Dag 47</span></div>",
-      "css": ".ds-bug{display:flex;align-items:stretch;height:40px;font-family:var(--f-display)} .ds-bug>span{display:flex;align-items:center;font-weight:800;white-space:nowrap;text-transform:uppercase} .ds-bug__live{gap:8px;padding:0 18px;background:#c93339;color:var(--paper);font-size:13px;letter-spacing:.14em} .ds-bug__dot{width:8px;height:8px;border-radius:999px;background:rgba(255,255,255,.27);box-shadow:0 0 0 2px var(--paper);animation:ds-pulse 1.6s var(--ease) infinite} @keyframes ds-pulse{50%{opacity:.3}} .ds-bug__title{padding:0 22px;background:var(--ink-900);color:var(--paper);font-size:14px;letter-spacing:.1em} .ds-bug__day{padding:0 18px;background:var(--jade);color:var(--ink-900);font-size:14px;letter-spacing:.06em;font-variant-numeric:tabular-nums}"
+      "refersTo": "bug-live",
+      "description": "[family] Flush square 40px blocks in a fixed order: LIVE (only when a fresh check says live), mark (bmiest products only), name, slot, day. Source: bmiest.be css/site.css .bug.",
+      "html": "<div class=\"ds-bug\"><span class=\"ds-bug__live\"><span class=\"ds-bug__dot\"></span>Live</span><span class=\"ds-bug__mark\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"2.6\" fill=\"currentColor\"/><path d=\"M7.4 7.4a6.5 6.5 0 0 0 0 9.2M16.6 7.4a6.5 6.5 0 0 1 0 9.2M4.6 4.6a10.5 10.5 0 0 0 0 14.8M19.4 4.6a10.5 10.5 0 0 1 0 14.8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/></svg></span><a class=\"ds-bug__name\" href=\"#\">bmiest</a><span class=\"ds-bug__slot\">Kelderklasse <span class=\"ds-bug__realm\">· EU-Draenor</span></span><span class=\"ds-bug__day\">Dag 47</span></div>",
+      "css": ".ds-bug{display:flex;align-items:stretch;height:40px;min-width:0;font-family:var(--f-display)} .ds-bug>*{display:flex;align-items:center;gap:9px;font-weight:800;white-space:nowrap;text-decoration:none} .ds-bug__live{padding:0 18px;background:var(--live-red);color:var(--paper);font-size:13px;letter-spacing:.14em;text-transform:uppercase} .ds-bug__dot{width:8px;height:8px;flex:0 0 8px;border-radius:var(--r-pill);background:rgba(238,241,245,.27);box-shadow:0 0 0 2px var(--paper);animation:ds-pulse 1.6s var(--ease) infinite} @keyframes ds-pulse{50%{opacity:.3}} .ds-bug__mark{width:40px;justify-content:center;background:var(--jade);color:var(--ink-900)} .ds-bug__mark svg{width:20px;height:20px} .ds-bug__name{padding:0 20px;background:var(--ink-900);color:var(--paper);font-size:14px;letter-spacing:.1em;text-transform:uppercase;transition:color var(--t-fast) var(--ease)} .ds-bug__name:hover{color:var(--jade)} .ds-bug__name:focus-visible{outline:2px solid var(--jade);outline-offset:3px} .ds-bug__slot{padding:0 18px;background:var(--ink-750);color:var(--paper-dim);font-size:13px;letter-spacing:.08em;text-transform:uppercase;min-width:0;overflow:hidden} .ds-bug__realm{color:var(--ink-200)} .ds-bug__day{padding:0 18px;background:var(--jade);color:var(--ink-900);font-size:13px;letter-spacing:.08em;text-transform:uppercase} @media (prefers-reduced-motion:reduce){.ds-bug__dot{animation:none}}"
     },
     {
       "name": "Language Switch",
-      "kind": "button",
+      "kind": "nav",
       "refersTo": "lang-block",
-      "description": "[race] NL | EN in the bug's flush blocks; active solid jade.",
-      "html": "<div class=\"ds-lang\" role=\"group\" aria-label=\"Taal\"><button type=\"button\" aria-pressed=\"true\">NL</button><button type=\"button\" aria-pressed=\"false\">EN</button></div>",
-      "css": ".ds-lang{display:inline-flex;height:40px} .ds-lang button{font-family:var(--f-display);font-size:13px;font-weight:800;letter-spacing:.12em;padding:0 14px;border:0;cursor:pointer;background:var(--ink-900);color:var(--ink-300);transition:color var(--t-fast) var(--ease),background var(--t-fast) var(--ease)} .ds-lang button:hover{color:var(--paper)} .ds-lang button[aria-pressed=\"true\"]{background:var(--jade);color:var(--ink-900)} .ds-lang button:focus-visible{outline:2px solid var(--jade);outline-offset:3px}"
+      "description": "[family] NL | EN as two flush blocks at the bug's height; active solid jade with ink text. Source: bmiest.be and race .lang-switch.",
+      "html": "<div class=\"ds-lang\" role=\"group\" aria-label=\"Language\"><button type=\"button\" aria-pressed=\"true\">NL</button><button type=\"button\" aria-pressed=\"false\">EN</button></div>",
+      "css": ".ds-lang{display:inline-flex;height:40px} .ds-lang button{font-family:var(--f-display);font-size:13px;font-weight:800;letter-spacing:.12em;cursor:pointer;padding:0 14px;border:0;background:var(--ink-900);color:var(--ink-300);transition:color var(--t-fast) var(--ease),background var(--t-fast) var(--ease)} .ds-lang button:hover{color:var(--paper)} .ds-lang button[aria-pressed=\"true\"]{background:var(--jade);color:var(--ink-900)} .ds-lang button:focus-visible{outline:2px solid var(--jade);outline-offset:-2px}"
     },
     {
-      "name": "Pill",
+      "name": "Flush Switch and Tabs",
+      "kind": "nav",
+      "refersTo": "switch-block",
+      "description": "[family] The language switch one step smaller for views and periods: 32px flush blocks, 12px/800 caps, real tablist semantics; the wishlist's 40px variant sits in a 1px ink-700 frame. Source: race style.css .seg, wishlist .tabs.",
+      "html": "<div class=\"ds-seg\" role=\"tablist\" aria-label=\"View\"><button role=\"tab\" aria-selected=\"true\">Grafiek</button><button role=\"tab\" aria-selected=\"false\">Plaatsen</button><button role=\"tab\" aria-selected=\"false\">Replay</button><button role=\"tab\" aria-selected=\"false\">Ronde</button></div> <div class=\"ds-seg ds-seg--framed\" role=\"tablist\" aria-label=\"Difficulty\"><button role=\"tab\" aria-selected=\"true\">Heroic</button><button role=\"tab\" aria-selected=\"false\">Mythic</button></div>",
+      "css": ".ds-seg{display:inline-flex;height:32px;max-width:100%;overflow-x:auto;vertical-align:top} .ds-seg button{flex:0 0 auto;font-family:var(--f-display);font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;padding:0 12px;border:0;background:var(--ink-850);color:var(--ink-300);transition:color var(--t-fast) var(--ease),background var(--t-fast) var(--ease)} .ds-seg button:hover{color:var(--paper)} .ds-seg button[aria-selected=\"true\"]{background:var(--jade);color:var(--ink-900)} .ds-seg button:focus-visible{outline:2px solid var(--jade);outline-offset:-2px} .ds-seg--framed{height:40px;border:1px solid var(--ink-700)} .ds-seg--framed button{padding:0 20px;font-size:13px;letter-spacing:.12em;color:var(--ink-200)} .ds-seg--framed button:hover{background:var(--ink-800)} .ds-seg--framed button[aria-selected=\"true\"]{background:var(--jade);color:var(--ink-900)} .ds-seg--framed button:focus-visible{outline-color:var(--ink-900);outline-offset:-4px}"
+    },
+    {
+      "name": "Key/Value Strip",
+      "kind": "chip",
+      "refersTo": "strip-key",
+      "description": "[family] Flush key and value blocks at 30px; the value takes an 8px trailing slant and an ellipsis; a highlighted key is solid jade; earned words go gold. Source: bmiest.be .abil, overlay index.css .tally.",
+      "html": "<ul class=\"ds-strip\"><li><span class=\"ds-strip__k\">Pgm</span><span class=\"ds-strip__v\"><b>Cutting Edge</b> · <span class=\"ds-mono\">8/8 M</span></span></li><li><span class=\"ds-strip__k\">Role</span><span class=\"ds-strip__v\">Mistweaver Monk</span></li><li><span class=\"ds-strip__k ds-strip__k--jade\">Kills</span><span class=\"ds-strip__v\"><span class=\"ds-mono\">142</span></span></li></ul>",
+      "css": ".ds-strip{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;font-family:var(--f-display)} .ds-strip li{display:flex;align-items:stretch;height:30px;max-width:100%} .ds-strip__k{display:flex;align-items:center;padding:0 11px;white-space:nowrap;background:var(--ink-750);color:var(--ink-200);font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase} .ds-strip__k--jade{background:var(--jade);color:var(--ink-900)} .ds-strip__v{display:block;line-height:30px;padding:0 20px 0 11px;white-space:nowrap;background:var(--ink-800);color:var(--paper);font-size:13px;font-weight:600;overflow:hidden;text-overflow:ellipsis;min-width:0;clip-path:polygon(0 0,100% 0,calc(100% - 8px) 100%,0 100%)} .ds-strip__v b{color:var(--gold);font-weight:700} .ds-mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums;font-size:12px}"
+    },
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "[family] Solid jade, ink text, 52px, 12px trailing slant, 20px drawn icon; hover turns paper. One per view; an outbound link gets a 16px out-arrow. Source: bmiest.be .btn (overlay .btn moves 11px to 12px).",
+      "html": "<a class=\"ds-btn\" href=\"#\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M4 3h17v11l-5 5h-4l-3 3H7v-3H3V7zM6 5v11h3v3l3-3h4l3-3V5zm5 3h2v5h-2zm5 0h2v5h-2z\" fill=\"currentColor\"/></svg>Watch on Twitch<span class=\"ds-btn__out\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M7 17 17 7M9 7h8v8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linecap=\"square\"/></svg></span></a>",
+      "css": ".ds-btn{display:inline-flex;align-items:center;gap:10px;height:52px;padding:0 32px 0 22px;background:var(--jade);color:var(--ink-900);font-family:var(--f-display);font-size:15px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;white-space:nowrap;clip-path:polygon(0 0,100% 0,calc(100% - 12px) 100%,0 100%);transition:background var(--t-fast) var(--ease),color var(--t-fast) var(--ease)} .ds-btn:hover{background:var(--paper)} .ds-btn:focus-visible{outline:2px solid var(--paper);outline-offset:-4px} .ds-btn svg{width:20px;height:20px;flex:0 0 20px} .ds-btn__out{display:inline-flex} .ds-btn__out svg{width:16px;height:16px;flex-basis:16px}"
+    },
+    {
+      "name": "Primary Button (Live)",
+      "kind": "button",
+      "refersTo": "button-primary-live",
+      "description": "[family] The Watch button while the channel is really live: live-red with paper text; paper with red text on hover. Source: bmiest.be .btn--live.",
+      "html": "<a class=\"ds-btn ds-btn--live\" href=\"#\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M4 3h17v11l-5 5h-4l-3 3H7v-3H3V7zM6 5v11h3v3l3-3h4l3-3V5zm5 3h2v5h-2zm5 0h2v5h-2z\" fill=\"currentColor\"/></svg>Live now · watch</a>",
+      "css": ".ds-btn{display:inline-flex;align-items:center;gap:10px;height:52px;padding:0 32px 0 22px;background:var(--jade);color:var(--ink-900);font-family:var(--f-display);font-size:15px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;white-space:nowrap;clip-path:polygon(0 0,100% 0,calc(100% - 12px) 100%,0 100%);transition:background var(--t-fast) var(--ease),color var(--t-fast) var(--ease)} .ds-btn svg{width:20px;height:20px;flex:0 0 20px} .ds-btn--live{background:var(--live-red);color:var(--paper)} .ds-btn--live:hover{background:var(--paper);color:var(--live-red)} .ds-btn:focus-visible{outline:2px solid var(--paper);outline-offset:-4px}"
+    },
+    {
+      "name": "Loot Row",
+      "kind": "button",
+      "refersTo": "loot-row",
+      "description": "[family] The secondary action: an ink-750 chip at the primary's height and slant, loot type in paper, 18px jade drawn icon; hover ink-600 with jade text. Source: bmiest.be .drop.",
+      "html": "<a class=\"ds-loot\" href=\"#\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M22 7.4a3 3 0 0 0-2.1-2.1C18 4.8 12 4.8 12 4.8s-6 0-7.9.5A3 3 0 0 0 2 7.4 31 31 0 0 0 1.6 12a31 31 0 0 0 .4 4.6 3 3 0 0 0 2.1 2.1c1.9.5 7.9.5 7.9.5s6 0 7.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .4-4.6 31 31 0 0 0-.4-4.6zM10 15.2V8.8l5.2 3.2z\" fill=\"currentColor\"/></svg>YouTube</a>",
+      "css": ".ds-loot{display:inline-flex;align-items:center;gap:10px;height:52px;padding:0 28px 0 18px;background:var(--ink-750);color:var(--paper);font-family:var(--f-display);font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;white-space:nowrap;clip-path:polygon(0 0,100% 0,calc(100% - 12px) 100%,0 100%);transition:background var(--t-fast) var(--ease),color var(--t-fast) var(--ease)} .ds-loot svg{width:18px;height:18px;flex:0 0 18px;color:var(--jade)} .ds-loot:hover{background:var(--ink-600);color:var(--jade)} .ds-loot:focus-visible{outline:2px solid var(--jade);outline-offset:-4px}"
+    },
+    {
+      "name": "Pills",
       "kind": "chip",
       "refersTo": "pill",
-      "description": "[family] Slanted flat chip; jade text for the CE marker.",
-      "html": "<span class=\"ds-pill\">9 bosses</span> <span class=\"ds-pill ds-pill--jade\">Cutting Edge: Ula'tek</span>",
-      "css": ".ds-pill{display:inline-flex;align-items:center;gap:6px;padding:6px 15px 6px 11px;font-family:var(--f-display);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap;background:var(--ink-750);color:var(--ink-200);clip-path: polygon(0 0, 100% 0, calc(100% - 6px) 100%, 0 100%);} .ds-pill--jade{color:var(--jade)}"
+      "description": "[family] Slanted ink-750 chips in label type: jade for a positive marker, gold with a star only for something earned, ink-300 neutral; a pill can be a button. Source: bmiest.be/race .pill, race/wishlist .pill--action.",
+      "html": "<span class=\"ds-pill ds-pill--jade\">CE</span> <span class=\"ds-pill ds-pill--gold\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 2.5l2.9 6.2 6.6.7-5 4.5 1.4 6.6L12 17.2l-5.9 3.3 1.4-6.6-5-4.5 6.6-.7z\" fill=\"currentColor\"/></svg>Eerste kill · dag 12</span> <span class=\"ds-pill ds-pill--muted\">Buiten de race</span> <button type=\"button\" class=\"ds-pill ds-pill--action\">Toon alle raiders</button>",
+      "css": ".ds-pill{display:inline-flex;align-items:center;gap:6px;padding:6px 15px 6px 11px;border:0;font-family:var(--f-display);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap;background:var(--ink-750);color:var(--ink-200);clip-path:polygon(0 0,100% 0,calc(100% - 6px) 100%,0 100%)} .ds-pill svg{width:12px;height:12px} .ds-pill--jade{color:var(--jade)} .ds-pill--gold{color:var(--gold)} .ds-pill--muted{color:var(--ink-300)} .ds-pill--action{cursor:pointer;color:var(--jade);transition:background var(--t-fast) var(--ease),color var(--t-fast) var(--ease)} .ds-pill--action:hover{background:var(--ink-700)} .ds-pill--action:focus-visible{outline:2px solid var(--jade);outline-offset:2px} .ds-pill--action[aria-pressed=\"true\"]{background:var(--jade);color:var(--ink-900)}"
     },
     {
-      "name": "Board Ribbon",
+      "name": "Ribbon",
       "kind": "custom",
       "refersTo": "ribbon",
-      "description": "[family] Overlay ribbon: slanted 1px outline, guild-colour rank block, name. Leader outline in gold.",
-      "html": "<div class=\"ds-rib ds-rib--lead\"><div class=\"ds-rib__in\"><span class=\"ds-rib__acc\">1</span><a class=\"ds-rib__val\" href=\"#\">Kelderklasse</a></div></div><div class=\"ds-rib ds-rib--g2\"><div class=\"ds-rib__in\"><span class=\"ds-rib__acc\">2</span><a class=\"ds-rib__val\" href=\"#\">Kameraden</a></div></div>",
-      "css": ".ds-rib{--acc:#4f9dff;width:320px;height:46px;padding:1px;background:var(--ink-600);clip-path: polygon(0 0, 100% 0, calc(100% - 11px) 100%, 0 100%);} .ds-rib--lead{background:var(--gold)} .ds-rib--g2{--acc:#f08a3c;margin-top:8px} .ds-rib__in{height:100%;display:flex;align-items:center;background:var(--ink-800);padding-right:23px;clip-path:polygon(0 0,100% 0,calc(100% - 10px) 100%,0 100%)} .ds-rib__acc{flex:0 0 46px;height:100%;display:grid;place-items:center;background:var(--acc);color:var(--ink-900);font-family:var(--f-mono);font-size:20px;font-weight:800;clip-path: polygon(0 0, 100% 0, calc(100% - 10px) 100%, 0 100%);} .ds-rib__val{padding-left:13px;font-family:var(--f-display);font-size:18px;font-weight:600;color:var(--paper);text-decoration:none;white-space:nowrap} .ds-rib__val:hover{color:var(--jade)} .ds-rib__val:focus-visible{outline:2px solid var(--jade);outline-offset:3px}"
+      "description": "[family] 1px slanted ink-600 outline (gold for a leader) around an ink-800 body, a square key block left (rank in mono on the guild colour), the name in ribbon type. Source: bmiest.be .rib, race splash.css .row.",
+      "html": "<div class=\"ds-rib ds-rib--lead\"><span class=\"ds-rib__bar\"><span class=\"ds-rib__in\"><span class=\"ds-rib__acc\">1</span><a class=\"ds-rib__val\" href=\"#\">Kelderklasse</a></span></span></div><div class=\"ds-rib\"><span class=\"ds-rib__bar\"><span class=\"ds-rib__in\"><span class=\"ds-rib__acc ds-rib__acc--b\">2</span><a class=\"ds-rib__val\" href=\"#\">Vanguard of Light</a></span></span></div>",
+      "css": ".ds-rib{display:flex;min-width:0;max-width:380px;margin-bottom:10px;color:var(--paper);font-family:var(--f-display)} .ds-rib__bar{display:block;width:100%;height:46px;padding:1px;background:var(--ink-600);clip-path:polygon(0 0,100% 0,calc(100% - 11px) 100%,0 100%)} .ds-rib--lead .ds-rib__bar{background:var(--gold)} .ds-rib__in{height:100%;display:flex;align-items:center;background:var(--ink-800);clip-path:polygon(0 0,100% 0,calc(100% - 10px) 100%,0 100%);padding-right:24px} .ds-rib__acc{flex:0 0 44px;height:100%;display:grid;place-items:center;background:#e07a3f;color:var(--ink-900);font-family:var(--f-mono);font-size:20px;font-weight:800;clip-path:polygon(0 0,100% 0,calc(100% - 10px) 100%,0 100%)} .ds-rib__acc--b{background:#5aa9ff} .ds-rib__val{padding-left:13px;font-size:18px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--paper);text-decoration:none;transition:color var(--t-fast) var(--ease)} .ds-rib__val:hover{color:var(--jade)} .ds-rib__val:focus-visible{outline:2px solid var(--jade);outline-offset:3px}"
     },
     {
-      "name": "Raid-frame Bar",
+      "name": "Pick",
       "kind": "custom",
-      "refersTo": "ribbon",
-      "description": "[race] Per guild on the board: a wrapping label line (current boss, best pull, pulls) with the raiding badge on it, over a slanted bar filled to the share of the boss already down.",
-      "html": "<div class=\"ds-fight\"><span class=\"ds-fight__label\">The Twin Fangs · Beste pull 27,00% · 41 pulls</span><span class=\"ds-fight__hp\"><i></i></span></div>",
-      "css": ".ds-fight{display:grid;gap:6px;width:360px;font-family:var(--f-display)} .ds-fight__label{font-size:14px;color:var(--paper-dim)} .ds-fight__hp{display:block;height:10px;background:rgba(255,255,255,.08);clip-path: polygon(0 0, 100% 0, calc(100% - 6px) 100%, 0 100%);} .ds-fight__hp i{display:block;height:100%;width:73%;background:#4f9dff}"
+      "refersTo": "pick",
+      "description": "[family] The ribbon as a choice list: 60px with a slanted head tile, name over an ink-300 subline; hover ink-400 outline, focus paper, chosen jade outline + ink-750 body + jade subline; a live head gets a 2px live-red inset ring. Source: overlay index.css .pick, bmiest.be .enc.",
+      "html": "<div class=\"ds-picks\"><a class=\"ds-pick\" href=\"#\" aria-current=\"true\"><span class=\"ds-pick__bar\"><span class=\"ds-pick__in\"><span class=\"ds-pick__head\">S</span><span class=\"ds-pick__t\"><span class=\"ds-pick__n\">Shiftheal</span><span class=\"ds-pick__s\">Mistweaver Monk · Kelderklasse</span></span></span></span></a><a class=\"ds-pick\" href=\"#\"><span class=\"ds-pick__bar\"><span class=\"ds-pick__in\"><span class=\"ds-pick__head ds-pick__head--live\">T</span><span class=\"ds-pick__t\"><span class=\"ds-pick__n\">Twitch</span><span class=\"ds-pick__s\">Live now</span></span></span></span></a></div>",
+      "css": ".ds-picks{display:grid;gap:8px;max-width:400px;font-family:var(--f-display)} .ds-pick{display:block;color:var(--paper);text-decoration:none} .ds-pick__bar{display:block;height:60px;padding:1px;background:var(--ink-600);clip-path:polygon(0 0,100% 0,calc(100% - 11px) 100%,0 100%);transition:background var(--t-fast) var(--ease)} .ds-pick__in{height:100%;display:flex;align-items:center;background:var(--ink-800);clip-path:polygon(0 0,100% 0,calc(100% - 10px) 100%,0 100%);padding-right:26px;transition:background var(--t-fast) var(--ease)} .ds-pick__head{flex:0 0 60px;height:100%;display:grid;place-items:center;padding-right:8px;background:var(--ink-750);color:var(--ink-300);font-weight:800;clip-path:polygon(0 0,100% 0,calc(100% - 10px) 100%,0 100%)} .ds-pick__head--live{box-shadow:inset 0 0 0 2px var(--live-red)} .ds-pick__t{display:grid;gap:1px;padding-left:14px;min-width:0} .ds-pick__n{font-size:18px;font-weight:700;line-height:1.1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis} .ds-pick__s{font-size:12px;color:var(--ink-300);white-space:nowrap;overflow:hidden;text-overflow:ellipsis} .ds-pick:hover .ds-pick__bar{background:var(--ink-400)} .ds-pick:focus-visible{outline:0} .ds-pick:focus-visible .ds-pick__bar{background:var(--paper)} .ds-pick[aria-current=\"true\"] .ds-pick__bar{background:var(--jade)} .ds-pick[aria-current=\"true\"] .ds-pick__in{background:var(--ink-750)} .ds-pick[aria-current=\"true\"] .ds-pick__head{background:var(--ink-700)} .ds-pick[aria-current=\"true\"] .ds-pick__s{color:var(--jade)}"
+    },
+    {
+      "name": "Race Track",
+      "kind": "custom",
+      "refersTo": "race-track-segment",
+      "description": "[family] Progress as a boss health bar: a slanted segment per boss, 3px apart, filled in the owner's colour from --p minus each segment's --i; the finish segment's track is jade at 20%. Nameplate size (7px, 2px slant) and lane size (14px, 5px slant). Source: race splash.css .row__hp. Snippet sets --p/--i in CSS; the product sets --p with style.setProperty().",
+      "html": "<div class=\"ds-track ds-track--plate\" role=\"img\" aria-label=\"6/8 · nog 69,8%\"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class=\"ds-track ds-track--lane\" role=\"img\" aria-label=\"6/8 · nog 69,8%\"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>",
+      "css": ".ds-track{display:flex;gap:3px;max-width:369px;margin-bottom:14px;--p:6.302;--guild:#e07a3f} .ds-track i{flex:1 1 0;min-width:0;background:linear-gradient(90deg,var(--guild) calc((var(--p) - var(--i,0)) * 100%),var(--seg-track,rgba(238,241,245,.08)) 0)} .ds-track i:nth-child(2){--i:1} .ds-track i:nth-child(3){--i:2} .ds-track i:nth-child(4){--i:3} .ds-track i:nth-child(5){--i:4} .ds-track i:nth-child(6){--i:5} .ds-track i:nth-child(7){--i:6} .ds-track i:nth-child(8){--i:7} .ds-track i:last-child{--seg-track:rgba(63,217,164,.2)} .ds-track--plate{height:7px} .ds-track--plate i{clip-path:polygon(0 0,100% 0,calc(100% - 2px) 100%,0 100%)} .ds-track--lane{height:14px} .ds-track--lane i{clip-path:polygon(0 0,100% 0,calc(100% - 5px) 100%,0 100%)}"
+    },
+    {
+      "name": "Meter",
+      "kind": "custom",
+      "refersTo": "meter",
+      "description": "[family] A single 10px slanted bar (5px in dense cells): track behind, fill in jade or the owner's colour, gold only on the earned best. Source: wishlist style.css .meter.",
+      "html": "<span class=\"ds-meter\"><i class=\"ds-w62\"></i></span><span class=\"ds-meter ds-meter--jade\"><i class=\"ds-w38\"></i></span><span class=\"ds-meter ds-meter--gold\"><i class=\"ds-w88\"></i></span><span class=\"ds-meter ds-meter--dense\"><i class=\"ds-w62\"></i></span>",
+      "css": ".ds-meter{display:block;width:220px;height:10px;margin-bottom:10px;background:rgba(238,241,245,.08);clip-path:polygon(0 0,100% 0,calc(100% - 6px) 100%,0 100%)} .ds-meter i{display:block;height:100%;background:var(--jade-deep)} .ds-meter--jade i{background:var(--jade)} .ds-meter--gold i{background:var(--gold)} .ds-meter--dense{height:5px;clip-path:polygon(0 0,100% 0,calc(100% - 3px) 100%,0 100%)} .ds-w38{width:38%} .ds-w62{width:62%} .ds-w88{width:88%}"
     },
     {
       "name": "Kills Ticker",
       "kind": "custom",
       "refersTo": "ticker",
-      "description": "[race] Broadcast ticker, edge to edge under the hero: jade label flush at the viewport edge, 2px jade top edge only, sliding list (static under reduced motion).",
-      "html": "<div class=\"ds-ticker\"><span class=\"ds-ticker__label\">Laatste kills</span><ol class=\"ds-ticker__list\"><li><b>Kelderklasse</b> · Sszorak · 27 sep · eerste kill</li><li><b>Kameraden</b> · Nymrissa Wavecaller · 28 sep</li></ol></div>",
-      "css": ".ds-ticker{display:flex;align-items:stretch;height:52px;overflow:hidden;background:var(--ink-900);border:0;border-top:2px solid var(--jade);font-family:var(--f-display)} .ds-ticker__label{display:flex;align-items:center;padding:0 20px;background:var(--jade);color:var(--ink-900);font-size:13px;font-weight:800;letter-spacing:.14em;text-transform:uppercase} .ds-ticker__list{list-style:none;display:flex;align-items:center;margin:0;padding:0} .ds-ticker__list li{padding:0 26px;font-size:15px;color:var(--paper-dim);white-space:nowrap} .ds-ticker__list b{color:var(--paper);font-weight:700}"
+      "description": "[family] A 52px ink-900 band edge to edge, 2px jade top edge, a solid jade label flush left; items in paper-dim with bold names, gold for a first or best, jade for an overtake, 1px ink-700 rules between; the list renders twice and slides at a constant pace (--tk-run), pauses on hover/focus, static under reduced motion. Source: race splash.css .ticker/.tk, bmiest.be .ticker.",
+      "html": "<div class=\"ds-ticker\" tabindex=\"0\"><span class=\"ds-ticker__label\">Laatste nieuws</span><div class=\"ds-ticker__track\"><ul class=\"ds-ticker__list\"><li class=\"ds-tk ds-tk--first\"><span class=\"ds-tk__t\">21:42</span><span><b>Kelderklasse</b> doodt als eerste Dimensius</span></li><li class=\"ds-tk ds-tk--pass\"><span class=\"ds-tk__t\">21:10</span><span><b>Vanguard</b> neemt plaats 2</span></li><li class=\"ds-tk\"><span class=\"ds-tk__t\">20:31</span><span><b>Outlaws</b> 6/8 · nog 69,8%</span></li><li class=\"ds-tk ds-tk--first\" aria-hidden=\"true\"><span class=\"ds-tk__t\">21:42</span><span><b>Kelderklasse</b> doodt als eerste Dimensius</span></li><li class=\"ds-tk ds-tk--pass\" aria-hidden=\"true\"><span class=\"ds-tk__t\">21:10</span><span><b>Vanguard</b> neemt plaats 2</span></li><li class=\"ds-tk\" aria-hidden=\"true\"><span class=\"ds-tk__t\">20:31</span><span><b>Outlaws</b> 6/8 · nog 69,8%</span></li></ul></div></div>",
+      "css": ".ds-ticker{position:relative;display:flex;align-items:stretch;height:52px;overflow:hidden;background:var(--ink-900);border-top:2px solid var(--jade);font-family:var(--f-display)} .ds-ticker:focus-visible{outline:2px solid var(--jade);outline-offset:3px} .ds-ticker__label{position:relative;z-index:2;flex:0 0 auto;display:flex;align-items:center;padding:0 20px;background:var(--jade);color:var(--ink-900);font-size:13px;font-weight:800;letter-spacing:.14em;text-transform:uppercase} .ds-ticker__track{position:relative;flex:1 1 auto;min-width:0;overflow:hidden;display:flex} .ds-ticker__track::after{content:\"\";position:absolute;top:0;right:0;bottom:0;width:64px;pointer-events:none;background:linear-gradient(90deg,transparent,var(--ink-900))} .ds-ticker__list{list-style:none;margin:0;padding:0;display:flex;align-items:center;flex:none;width:max-content;animation:ds-ticker-run var(--tk-run,24s) linear infinite} .ds-ticker:hover .ds-ticker__list,.ds-ticker:focus-within .ds-ticker__list{animation-play-state:paused} @keyframes ds-ticker-run{to{transform:translateX(-50%)}} .ds-tk{flex:0 0 auto;display:flex;align-items:baseline;gap:12px;padding:0 26px;font-size:15px;color:var(--paper-dim);white-space:nowrap} .ds-tk+.ds-tk{border-left:1px solid var(--ink-700)} .ds-tk b{color:var(--paper);font-weight:700} .ds-tk__t{font-family:var(--f-mono);font-variant-numeric:tabular-nums;font-size:12.5px;color:var(--ink-300)} .ds-tk--first .ds-tk__t{color:var(--gold)} .ds-tk--pass .ds-tk__t{color:var(--jade)} @media (prefers-reduced-motion:reduce){.ds-ticker__list{animation:none;flex:1 1 auto;width:auto;overflow-x:auto} .ds-tk[aria-hidden=\"true\"]{display:none}}"
     },
     {
       "name": "Section Head",
       "kind": "custom",
-      "refersTo": "headline",
-      "description": "[family] Outfit 800 caps behind a slanted jade cap.",
-      "html": "<h2 class=\"ds-head\">Per guild</h2>",
-      "css": ".ds-head{display:flex;align-items:center;gap:12px;margin:0;font-family:var(--f-display);font-size:clamp(24px,2.6vw,32px);font-weight:800;letter-spacing:-.01em;line-height:1.05;text-transform:uppercase;color:var(--paper)} .ds-head::before{content:\"\";flex:0 0 14px;height:.9em;background:var(--jade);clip-path: polygon(0 0, 100% 0, calc(100% - 5px) 100%, 0 100%);}"
+      "refersTo": "section-head",
+      "description": "[family] Headline type behind a slanted jade cap (14px, .9em, 5px slant), 18px above the content, no caption; subsections use headline-sub behind an 11px cap with a 4px slant. Source: race style.css .view__title, wishlist .sh__title.",
+      "html": "<h2 class=\"ds-sh\">Voortgang</h2><h3 class=\"ds-sh ds-sh--sub\">Raiders</h3>",
+      "css": ".ds-sh{display:flex;align-items:center;gap:12px;margin:0 0 18px;font-family:var(--f-display);font-size:clamp(24px,2.6vw,32px);font-weight:800;letter-spacing:-.01em;line-height:1.05;text-transform:uppercase;color:var(--paper)} .ds-sh::before{content:\"\";flex:0 0 14px;width:14px;height:.9em;background:var(--jade);clip-path:polygon(0 0,100% 0,calc(100% - 5px) 100%,0 100%)} .ds-sh--sub{gap:10px;font-size:clamp(20px,2vw,24px)} .ds-sh--sub::before{flex-basis:11px;width:11px;clip-path:polygon(0 0,100% 0,calc(100% - 4px) 100%,0 100%)}"
+    },
+    {
+      "name": "Folds",
+      "kind": "custom",
+      "refersTo": "fold",
+      "description": "[family] A <details> between 1px ink-700 hairlines: the drawn jade chevron, the title (paper, jade on hover) and a 14px ink-300 hint; never the browser triangle. Source: wishlist style.css .fold-sec/.disclose.",
+      "html": "<div class=\"ds-folds\"><details class=\"ds-fold\"><summary class=\"ds-disclose\"><span class=\"ds-fold__title\">Hall of fame</span><span class=\"ds-fold__hint\">8 bosses, 3 seasons</span></summary><div class=\"ds-fold__body\">Earlier tiers, folded away.</div></details><details class=\"ds-fold\" open><summary class=\"ds-disclose\"><span class=\"ds-fold__title\">How this works</span><span class=\"ds-fold__hint\">Data, timing, sources</span></summary><div class=\"ds-fold__body\">Fetched every five minutes on raid nights.</div></details></div>",
+      "css": ".ds-folds{display:grid;font-family:var(--f-display)} .ds-fold{border-top:1px solid var(--ink-700)} .ds-fold:last-child{border-bottom:1px solid var(--ink-700)} .ds-fold>summary{cursor:pointer;padding:16px 2px} .ds-disclose{list-style:none;display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 12px} .ds-disclose::-webkit-details-marker{display:none} .ds-disclose::before{content:\"\";align-self:center;flex:0 0 auto;width:7px;height:7px;margin:0 4px 0 2px;border-right:2px solid var(--jade);border-bottom:2px solid var(--jade);transform:rotate(-45deg);transition:transform var(--t-fast) var(--ease)} .ds-fold[open]>.ds-disclose::before{transform:rotate(45deg)} .ds-disclose:focus-visible{outline:2px solid var(--jade);outline-offset:3px} .ds-fold__title{font-size:16px;font-weight:700;color:var(--paper);transition:color var(--t-fast) var(--ease)} .ds-disclose:hover .ds-fold__title{color:var(--jade)} .ds-fold__hint{font-size:14px;color:var(--ink-300)} .ds-fold__body{padding:4px 0 20px 26px;color:var(--paper-dim);font-size:15px}"
     },
     {
       "name": "Boss Head",
       "kind": "custom",
       "refersTo": "boss-head",
-      "description": "[race] Slanted ink tile with the top of the boss cut-out, or the initial when there is no art.",
-      "html": "<span class=\"ds-bh\"><span class=\"ds-bh__mono\">N</span></span>",
-      "css": ".ds-bh{display:inline-grid;place-items:center;width:40px;height:40px;overflow:hidden;background:var(--ink-750);clip-path: polygon(0 0, 100% 0, calc(100% - 6px) 100%, 0 100%);} .ds-bh img{width:100%;height:100%;object-fit:cover;object-position:50% 0} .ds-bh__mono{font-family:var(--f-display);font-size:18px;font-weight:800;color:var(--ink-400)}"
+      "description": "[family] A slanted ink-750 tile (28-76px) showing the top of the boss cut-out (object-position: 50% 0), or the initial in ink-400 800 when there is no art; 6px slant at 40px, 4px at 28px. Source: wishlist style.css .boss-thumb.",
+      "html": "<span class=\"ds-boss\"><span class=\"ds-boss__mono\">D</span></span> <span class=\"ds-boss\"><span class=\"ds-boss__mono\">N</span></span> <span class=\"ds-boss ds-boss--sm\"><span class=\"ds-boss__mono\">P</span></span>",
+      "css": ".ds-boss{display:inline-grid;place-items:center;vertical-align:middle;width:40px;height:40px;overflow:hidden;background:var(--ink-750);clip-path:polygon(0 0,100% 0,calc(100% - 6px) 100%,0 100%);font-family:var(--f-display)} .ds-boss img{width:100%;height:100%;object-fit:cover;object-position:50% 0} .ds-boss__mono{font-size:14px;font-weight:800;color:var(--ink-400);letter-spacing:.02em;margin-right:4px} .ds-boss--sm{width:28px;height:28px;clip-path:polygon(0 0,100% 0,calc(100% - 4px) 100%,0 100%)} .ds-boss--sm .ds-boss__mono{font-size:11px;margin-right:2px}"
     },
     {
-      "name": "Kill Marks",
-      "kind": "custom",
+      "name": "Panels",
+      "kind": "card",
       "refersTo": "panel",
-      "description": "[family] Drawn marks, one stroke family: check (jade) for a kill, star (gold) for the race's first kill.",
-      "html": "<span class=\"ds-mark\"><svg viewBox=\"0 0 12 12\" width=\"10\" height=\"10\"><path d=\"M2 6.5 5 9.5 10.5 3\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>24 sep</span> <span class=\"ds-mark ds-mark--first\"><svg viewBox=\"0 0 12 12\" width=\"10\" height=\"10\"><path d=\"M6 1 7.5 4.3 11 4.7 8.4 7 9.1 10.5 6 8.8 2.9 10.5 3.6 7 1 4.7 4.5 4.3Z\" fill=\"currentColor\"/></svg>21 sep</span>",
-      "css": ".ds-mark{display:inline-flex;align-items:center;gap:6px;font-family:var(--f-mono);font-size:13px;color:var(--paper)} .ds-mark svg{color:var(--jade)} .ds-mark--first{color:var(--gold)} .ds-mark--first svg{color:var(--gold)}"
+      "description": "[family] Square ink-800 panels with a 1px ink-700 border; interactive ones lift to ink-750 with an ink-600 border; the winner panel has a 2px gold border and a drawn trophy; the error panel a 1px rose border. Source: race style.css .winner, .error-capsule; the interactive hover is composed from DESIGN.md (race .kv:hover, .tl-readout.is-picked).",
+      "html": "<div class=\"ds-panels\"><div class=\"ds-panel\">A plain panel on ink-800.</div><a class=\"ds-panel ds-panel--link\" href=\"#\">An interactive panel</a><div class=\"ds-panel ds-panel--winner\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M7 3h10v6a5 5 0 0 1-10 0zM7 5H3v2a4 4 0 0 0 4 4M17 5h4v2a4 4 0 0 1-4 4M12 14v4M8 21h8M9 18h6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"square\"/></svg><div><div class=\"ds-panel__label\">Winnaar</div><div class=\"ds-panel__name\">Kelderklasse</div></div></div><div class=\"ds-panel ds-panel--error\">Raider.IO gaf geen antwoord; gegevens van 13:42.</div></div>",
+      "css": ".ds-panels{display:grid;gap:16px;max-width:560px;font-family:var(--f-display)} .ds-panel{display:block;padding:16px 18px 18px;background:var(--ink-800);border:1px solid var(--ink-700);color:var(--paper);font-size:15px;text-decoration:none} .ds-panel--link{transition:background var(--t-fast) var(--ease),border-color var(--t-fast) var(--ease)} .ds-panel--link:hover{background:var(--ink-750);border-color:var(--ink-600)} .ds-panel--link:focus-visible{outline:2px solid var(--jade);outline-offset:3px} .ds-panel--winner{display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;gap:22px;padding:26px 30px;border:2px solid var(--gold)} .ds-panel--winner svg{width:64px;height:64px;color:var(--gold)} .ds-panel__label{font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)} .ds-panel__name{font-size:clamp(30px,5vw,52px);font-weight:700;line-height:1.05;letter-spacing:-.02em} .ds-panel--error{display:flex;align-items:center;gap:10px;padding:12px 16px;font-size:14px;border-color:var(--rose)}"
     },
     {
-      "name": "Per Guild Row",
+      "name": "Drop Panel",
       "kind": "custom",
-      "refersTo": "sheet-cell",
-      "description": "[race] A row per guild: slanted guild block (rank in guild colour, name, x/9 with leader in gold), a cell per boss (kill: check + mono date + pulls; first kill: gold star; progress: best % over a 5px guild meter; current boss framed 1px in guild colour; untried: dashed), then the pull strip.",
-      "html": "<div class=\"ds-gs\"><div class=\"ds-gs__who ds-gs__who--lead\"><span class=\"ds-gs__rank\">1</span><span class=\"ds-gs__name\">Kelderklasse</span><span class=\"ds-gs__k\">6<small>/9</small></span></div><div class=\"ds-gs__cell ds-gs__cell--first\"><span class=\"ds-gs__main\">27 sep</span><span class=\"ds-gs__sub\">82 pulls</span></div><div class=\"ds-gs__cell ds-gs__cell--kill\"><span class=\"ds-gs__main\">24 sep</span><span class=\"ds-gs__sub\">4 pulls</span></div><div class=\"ds-gs__cell ds-gs__cell--current\"><span class=\"ds-gs__main\">27,00%</span><span class=\"ds-gs__meter\"><i></i></span><span class=\"ds-gs__sub\">41 pulls</span></div><div class=\"ds-gs__cell ds-gs__cell--none\"></div></div>",
-      "css": ".ds-gs{--guild:#4f9dff;display:flex;gap:6px;font-family:var(--f-display)} .ds-gs__who{display:grid;grid-template-columns:42px 1fr auto;align-items:center;gap:0 10px;width:240px;min-height:58px;padding-right:18px;background:var(--ink-800);clip-path:polygon(0 0,100% 0,calc(100% - 10px) 100%,0 100%)} .ds-gs__rank{align-self:stretch;display:grid;place-items:center;background:var(--guild);color:var(--ink-900);font-size:18px;font-weight:800} .ds-gs__name{font-size:16px;font-weight:600;color:var(--paper)} .ds-gs__k{font-size:22px;font-weight:800;color:var(--paper)} .ds-gs__who--lead .ds-gs__k{color:var(--gold)} .ds-gs__k small{font-size:13px;font-weight:600;color:var(--ink-300)} .ds-gs__cell{width:96px;min-height:58px;padding:8px 9px;background:var(--ink-850);border:1px solid var(--ink-700)} .ds-gs__cell>span{display:block} .ds-gs__main{font-family:var(--f-mono);font-size:12px;color:var(--paper);white-space:nowrap} .ds-gs__sub{margin-top:3px;font-size:11px;color:var(--ink-300)} .ds-gs__cell--kill .ds-gs__main::before,.ds-gs__cell--first .ds-gs__main::before{content:\"\";display:inline-block;width:10px;height:10px;margin-right:6px;vertical-align:-1px;background:var(--jade);-webkit-mask:url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2 6.5 5 9.5 10.5 3' fill='none' stroke='%23000' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E\") center/contain no-repeat;mask:url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2 6.5 5 9.5 10.5 3' fill='none' stroke='%23000' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E\") center/contain no-repeat} .ds-gs__cell--first .ds-gs__main{color:var(--gold)} .ds-gs__cell--first .ds-gs__main::before{background:var(--gold);-webkit-mask-image:url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M6 1 7.5 4.3 11 4.7 8.4 7 9.1 10.5 6 8.8 2.9 10.5 3.6 7 1 4.7 4.5 4.3Z'/%3E%3C/svg%3E\");mask-image:url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M6 1 7.5 4.3 11 4.7 8.4 7 9.1 10.5 6 8.8 2.9 10.5 3.6 7 1 4.7 4.5 4.3Z'/%3E%3C/svg%3E\")} .ds-gs__meter{position:relative;height:5px;margin-top:5px;background:var(--ink-700)} .ds-gs__meter i{position:absolute;inset:0 auto 0 0;width:73%;background:var(--guild)} .ds-gs__cell--current{border-color:transparent;box-shadow:inset 0 0 0 1px var(--guild);background:var(--ink-800)} .ds-gs__cell--none{background:transparent;border-style:dashed;border-color:var(--ink-750)}"
+      "refersTo": "drop-panel",
+      "description": "[family] What opens from the bar: flat ink-850 under it, 1px ink-700 border, no shadow; its trigger is a flush bar block, jade with ink text while open, with a live-red count block only while live. Source: race splash.css .streamers.",
+      "html": "<div class=\"ds-drop\"><button type=\"button\" class=\"ds-drop__btn\" aria-expanded=\"true\" aria-controls=\"ds-drop-p\"><span class=\"ds-drop__live\"><span class=\"ds-drop__dot\"></span>2 live</span><span class=\"ds-drop__label\">Streamers</span></button><div class=\"ds-drop__panel\" id=\"ds-drop-p\"><div class=\"ds-drop__head\"><span class=\"ds-drop__h\">Streamers</span><button type=\"button\" class=\"ds-drop__close\" aria-label=\"Sluiten\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M5 5l14 14M19 5 5 19\"/></svg></button></div><div class=\"ds-drop__grp\"><div class=\"ds-drop__guild\"><i></i>Kelderklasse</div><a class=\"ds-drop__ch\" href=\"#\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M4 3h17v11l-5 5h-4l-3 3H7v-3H3V7zM6 5v11h3v3l3-3h4l3-3V5zm5 3h2v5h-2zm5 0h2v5h-2z\" fill=\"currentColor\"/></svg>shiftheal</a></div><div class=\"ds-drop__foot\">Bijgewerkt om 13:42</div></div></div>",
+      "css": ".ds-drop{position:relative;display:inline-block;min-height:300px;font-family:var(--f-display)} .ds-drop__btn{display:flex;align-items:stretch;height:40px;padding:0;border:0;background:none;cursor:pointer;font:inherit} .ds-drop__btn>span{display:flex;align-items:center;font-size:13px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap} .ds-drop__label{padding:0 14px;background:var(--ink-900);color:var(--paper);transition:color var(--t-fast) var(--ease),background var(--t-fast) var(--ease)} .ds-drop__btn:hover .ds-drop__label{color:var(--jade)} .ds-drop__btn[aria-expanded=\"true\"] .ds-drop__label{background:var(--jade);color:var(--ink-900)} .ds-drop__live{gap:8px;padding:0 14px;background:var(--live-red);color:var(--paper)} .ds-drop__dot{width:7px;height:7px;flex:0 0 7px;border-radius:var(--r-pill);background:rgba(255,255,255,.27);box-shadow:0 0 0 2px var(--paper)} .ds-drop__btn:focus-visible{outline:2px solid var(--jade);outline-offset:3px} .ds-drop__panel{position:absolute;z-index:20;top:calc(100% + 8px);left:0;width:min(380px,calc(100vw - 32px));padding:16px 18px 14px;background:var(--ink-850);border:1px solid var(--ink-700)} .ds-drop__head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:8px} .ds-drop__h{font-size:16px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--paper)} .ds-drop__close{display:grid;place-items:center;width:32px;height:32px;margin:-6px -8px -6px 0;padding:0;border:0;background:none;color:var(--ink-300);cursor:pointer} .ds-drop__close svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2} .ds-drop__close:hover{color:var(--paper)} .ds-drop__close:focus-visible{outline:2px solid var(--jade);outline-offset:0} .ds-drop__grp{padding:10px 0;border-top:1px solid var(--ink-700)} .ds-drop__guild{display:flex;align-items:center;gap:8px;margin-bottom:6px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--paper-dim)} .ds-drop__guild i{width:12px;height:12px;flex:0 0 12px;background:#e07a3f;clip-path:polygon(0 0,100% 0,calc(100% - 3px) 100%,0 100%)} .ds-drop__ch{display:inline-flex;align-items:center;gap:6px;font-size:15px;font-weight:600;color:var(--paper);text-decoration:none} .ds-drop__ch svg{width:13px;height:13px;flex:0 0 13px;color:var(--ink-300)} .ds-drop__ch:hover,.ds-drop__ch:hover svg{color:var(--jade)} .ds-drop__foot{margin-top:6px;padding-top:10px;border-top:1px solid var(--ink-700);font-size:12px;color:var(--ink-300)}"
     },
     {
-      "name": "Pull Strip",
+      "name": "Popover",
       "kind": "custom",
-      "refersTo": "sheet-cell",
-      "description": "[race] Pulls on a guild's current boss: a bar per pull, the best in guild colour, caption naming 'beste x%' in guild colour and the source link kept whole.",
-      "html": "<div class=\"ds-ps\"><span class=\"ds-ps__bars\"><i></i><i></i><i></i><i class=\"is-best\"></i><i></i><i></i></span><span class=\"ds-ps__cap\">The Twin Fangs · 41 pulls · <b>beste 27,00%</b><span class=\"ds-ps__src\"> · <a href=\"#\">raider.io</a></span></span></div>",
-      "css": ".ds-ps{--guild:#4f9dff;width:230px;font-family:var(--f-display)} .ds-ps__bars{display:flex;align-items:flex-end;gap:1px;height:32px;border-bottom:1px solid var(--ink-600)} .ds-ps__bars i{flex:1;height:40%;background:var(--ink-500)} .ds-ps__bars i.is-best{background:var(--guild)} .ds-ps__cap{display:block;margin-top:5px;font-size:11px;line-height:1.4;color:var(--paper-dim)} .ds-ps__cap b{color:var(--guild);font-weight:600;white-space:nowrap} .ds-ps__src{white-space:nowrap} .ds-ps__src a{color:var(--ink-300);text-decoration:none} .ds-ps__src a:hover{color:var(--jade)} .ds-ps__bars i:nth-child(2){height:55%} .ds-ps__bars i:nth-child(3){height:48%} .ds-ps__bars i.is-best{height:73%} .ds-ps__bars i:nth-child(6){height:60%}"
+      "refersTo": "popover",
+      "description": "[family] The One Float Rule's popover: ink-750, 1px ink-500 border, one shadow, a caret, label-type title and mono values; opens on hover, focus or tap. Its trigger reads as openable: a dotted ink-400 underline and a 10px chevron. Source: race style.css .gb__rank/.gb__pop.",
+      "html": "<span class=\"ds-pop\"><button type=\"button\" class=\"ds-pop__trig\" aria-expanded=\"false\"><span class=\"ds-pop__v\">#412</span><svg class=\"ds-pop__chev\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M6 9l6 6 6-6\"/></svg></button><span class=\"ds-pop__box\" role=\"tooltip\"><span class=\"ds-pop__h\">Kill rank</span><span class=\"ds-pop__r\">World <b>#412</b></span><span class=\"ds-pop__r\">Europe <b>#198</b></span><span class=\"ds-pop__r\">Draenor <b>#7</b></span></span></span>",
+      "css": ".ds-pop{position:relative;display:inline-block;margin-top:110px;font-family:var(--f-display)} .ds-pop__trig{display:inline-flex;align-items:center;gap:3px;min-height:24px;padding:3px 5px;background:none;border:0;color:var(--ink-200);font:500 11px var(--f-mono);white-space:nowrap;cursor:help;transition:background var(--t-fast) var(--ease),color var(--t-fast) var(--ease)} .ds-pop__v{text-decoration:underline dotted var(--ink-400);text-decoration-thickness:1px;text-underline-offset:3px} .ds-pop__chev{width:10px;height:10px;fill:none;stroke:var(--ink-400);stroke-width:2;transition:transform var(--t-fast) var(--ease),stroke var(--t-fast) var(--ease)} .ds-pop__trig:hover,.ds-pop__trig:focus-visible,.ds-pop__trig[aria-expanded=\"true\"]{background:var(--ink-700);color:var(--paper)} .ds-pop__trig:hover .ds-pop__chev,.ds-pop__trig[aria-expanded=\"true\"] .ds-pop__chev{stroke:var(--paper);transform:rotate(180deg)} .ds-pop__trig:focus-visible{outline:2px solid var(--jade);outline-offset:1px} .ds-pop__box{position:absolute;z-index:5;bottom:calc(100% + 6px);left:0;display:grid;gap:3px;min-width:150px;padding:9px 11px 10px;background:var(--ink-750);border:1px solid var(--ink-500);box-shadow:0 8px 20px -6px rgba(0,0,0,.7);opacity:0;visibility:hidden;transform:translateY(4px);pointer-events:none;transition:opacity 140ms ease-out,transform 140ms cubic-bezier(.16,1,.3,1),visibility 0s 140ms} .ds-pop__box::after{content:\"\";position:absolute;top:100%;left:14px;border:6px solid transparent;border-top-color:var(--ink-500)} .ds-pop:hover .ds-pop__box,.ds-pop__trig:focus-visible+.ds-pop__box,.ds-pop__trig[aria-expanded=\"true\"]+.ds-pop__box{opacity:1;visibility:visible;transform:none;transition-delay:0s} .ds-pop__h{margin-bottom:2px;font-size:10.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-300)} .ds-pop__r{display:flex;justify-content:space-between;gap:14px;font-size:12.5px;color:var(--paper-dim);white-space:nowrap} .ds-pop__r b{font-family:var(--f-mono);font-size:12px;font-weight:700;color:var(--paper)} @media (prefers-reduced-motion:reduce){.ds-pop__box,.ds-pop__chev{transition:none}}"
     },
     {
-      "name": "Fold",
-      "kind": "custom",
-      "refersTo": "fold",
-      "description": "[race] A folded section as a quiet row between hairlines, with the one drawn disclosure chevron; not a section head.",
-      "html": "<details class=\"ds-fold\"><summary><span class=\"ds-fold__t\">Hall of fame</span><span class=\"ds-fold__h\">Teams en raiders</span></summary><p class=\"ds-fold__body\">…</p></details>",
-      "css": ".ds-fold{border-top:1px solid var(--ink-700);border-bottom:1px solid var(--ink-700);font-family:var(--f-display)} .ds-fold summary{list-style:none;display:flex;flex-wrap:wrap;align-items:center;gap:10px;padding:16px 2px;cursor:pointer} .ds-fold summary::-webkit-details-marker{display:none} .ds-fold summary::before{content:\"\";width:7px;height:7px;margin:0 2px;border-right:2px solid var(--jade);border-bottom:2px solid var(--jade);transform:rotate(-45deg);transition:transform var(--t-fast) var(--ease)} .ds-fold[open] summary::before{transform:rotate(45deg)} .ds-fold__t{font-size:16px;font-weight:700;color:var(--paper)} .ds-fold summary:hover .ds-fold__t{color:var(--jade)} .ds-fold__h{font-size:14px;color:var(--ink-300)} .ds-fold__body{padding:0 2px 20px;color:var(--paper-dim);font-size:14px}"
+      "name": "Footer",
+      "kind": "nav",
+      "refersTo": "footer",
+      "description": "[family] A 1px ink-700 rule, the name with a quiet signature, uppercase links (13px/800, jade on hover; the current one paper with a 2px jade foot), and a to-top ink-800 block with a 6px slant and a drawn chevron. Source: race style.css .ft, bmiest.be .foot.",
+      "html": "<footer class=\"ds-foot\"><div class=\"ds-foot__id\"><span class=\"ds-foot__name\">Race to Dutch First</span><span class=\"ds-foot__meta\">Season 3 · dag 47</span></div><nav class=\"ds-foot__nav\" aria-label=\"Views\"><a href=\"#\" aria-current=\"page\">Race</a><a href=\"#\">Guilds</a><a href=\"#\">Wijzigingen</a></nav><button type=\"button\" class=\"ds-foot__up\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M6 15l6-6 6 6\"/></svg>Naar boven</button></footer>",
+      "css": ".ds-foot{display:flex;flex-wrap:wrap;align-items:center;gap:14px 32px;padding:28px 0 22px;border-top:1px solid var(--ink-700);font-family:var(--f-display)} .ds-foot__id{display:grid;gap:2px;margin-right:auto} .ds-foot__name{font-size:18px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:var(--paper)} .ds-foot__meta{font-family:var(--f-mono);font-size:12px;color:var(--ink-300)} .ds-foot__nav{display:flex;gap:22px} .ds-foot__nav a{padding:6px 0;font-size:13px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-200);text-decoration:none;box-shadow:inset 0 -2px 0 transparent;transition:color var(--t-fast) var(--ease)} .ds-foot__nav a:hover{color:var(--jade)} .ds-foot__nav a[aria-current=\"page\"]{color:var(--paper);box-shadow:inset 0 -2px 0 var(--jade)} .ds-foot__nav a:focus-visible{outline:2px solid var(--jade);outline-offset:3px} .ds-foot__up{display:inline-flex;align-items:center;gap:8px;height:36px;padding:0 18px 0 14px;border:0;background:var(--ink-800);font-family:var(--f-display);font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--paper-dim);cursor:pointer;clip-path:polygon(0 0,100% 0,calc(100% - 6px) 100%,0 100%);transition:color var(--t-fast) var(--ease),background var(--t-fast) var(--ease)} .ds-foot__up svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:square} .ds-foot__up:hover{color:var(--jade);background:var(--ink-750)} .ds-foot__up:focus-visible{outline:2px solid var(--jade);outline-offset:-4px}"
     }
   ],
   "narrative": {
-    "northStar": "The Raid Poster on the Overlay",
-    "overview": "The bmiest stream overlay's language, grown into a poster. The page opens on the boss the leading guild is fighting right now, cut out and standing in a jade-and-void glow with nothing drawn on it; the question (\"Wie haalt als eerste Cutting Edge?\") is the title, and the standings sit beside it as overlay ribbons with a raid-frame bar per guild. A broadcast bug crowns the page and a kills ticker closes the hero from edge to edge, both taken from the overlay's broadcast grammar. Below the hero the same parts (slanted rank blocks, slanted pills, square dark cells and panels) carry the data: Voortgang, then Per guild (a row per guild, a cell per boss, then its pulls), then the Hall of fame folded away.\n\nEverything is flat near-black ink: no rounded cards, no drop shadows, no glass. Shape comes from slanted cuts on the right edge of every ribbon, pill, bar, rank block and boss head. Colour is scarce and semantic: jade is the race and its live state, gold is the leader, the first kill and the winner, and each guild brings its own colour to its rank block, bar, line, meter and chip. The poster is loud only at the top; the sections below are a dense, honest data surface whose explanation sits in the marks themselves, with one-line captions.\n\nConfirmed rejections (from the direction history): the generic dark data dashboard (\"too generic, AI-looking\") and the sports-broadcast theme laid on top (\"still a dashboard, not WoW\"). More gamer-like is welcome; a dashboard is not.",
+    "northStar": "The Raid on the Broadcast",
+    "overview": "The language of a raiding streamer's broadcast, carried onto every page the family runs. It started as the stream overlay and grew into a poster on the race site; everything since speaks it. The grammar comes from the broadcast and from the game: a **broadcast bug** of flush square blocks crowns every page, an **edge-to-edge ticker** closes the first view, standings are **ribbons** like a raid's nameplates, progress is a **health bar cut into one segment per boss**, and the art is **the boss itself**, cut out and standing in a jade and void glow with nothing drawn on it.\n\nEverything sits on flat near-black ink: no rounded cards, no drop shadows, no glass. Shape comes from one cut, the **slant on the trailing edge** of every ribbon, pill, button, bar, chip and tile. Colour is scarce and always means something: jade is the brand and what is selected or OK, gold is earned, red is on air, rose is failed or stale, and guilds and classes bring their own colours as game data. The pages are loud at the top and dense, honest data below, where the marks explain themselves.\n\nEach product is a different room in the same house: the overlay is the broadcast, bmiest.be is the Adventure Guide that opens onto the tools, the wishlist is the operator's raid-night sheet, and Race to Dutch First is the raid poster for the Dutch community, sharing the language but not the brand.\n\nConfirmed rejections (direction history 2026-10-03, and since): the generic dark data dashboard (\"too generic, AI-looking\"), a sports-broadcast theme laid on top (\"still a dashboard, not WoW\"), a link-in-bio column, and a hero over a project-card grid. More gamer-like is welcome; a dashboard is not.",
     "keyCharacteristics": [
-      "[family] Flat ink scale, Outfit + JetBrains Mono, jade + gold, from the overlay's tokens.css unchanged.",
-      "[family] Right-edge slant on ribbons, pills, bars, rank blocks and tiles; square corners everywhere else.",
-      "[family] Colour as meaning: jade = brand/live, gold = leader/first/winner, guild colour = the guild.",
-      "[race] The leader's current boss as the hero art, nothing drawn on it, swapping as the race moves.",
-      "[race] Broadcast bug + edge-to-edge kills ticker framing the hero; board of ribbons as the standings.",
-      "[race] Per guild as the one detailed data view: a row per guild, not a table per boss.",
-      "[race] Brand-neutral: the overlay's language without any bmiest mark."
+      "Flat ink ramp, Outfit + JetBrains Mono, jade + gold, from one tokens.css copied byte for byte.",
+      "The right-edge slant on a named scale; square corners everywhere else; the bug, switches, strips and ticker are flush square blocks.",
+      "Colour as meaning: jade = brand, selected, OK; gold = earned; live-red = on air; rose = failed or stale; guild and class colours = game data.",
+      "The work shown running: live data with an honest timestamp, real renders and real screenshots, never a mock-up of itself.",
+      "Motion only when the data moves.",
+      "Every string in Dutch and English; game names never translated."
     ],
     "rules": [
       {
         "name": "The Gold Is Earned Rule",
-        "body": "Gold marks the leader, the race's first kill and the winner. A tag, a hover, a late-data note or a \"progress\" state is never gold.",
-        "section": "colors"
-      },
-      {
-        "name": "The Jade Is the Race Rule",
-        "body": "Jade is the race brand, live state and the CE marker. Guild colours (from guilds.toml) stay clear of jade and gold.",
+        "body": "Gold marks something earned: a leader, a first, a winner, a new best, the best upgrade. A tag, a hover, a progress state, a late note or a project label is never gold, and something that doesn't count earns no gold (a raid outside the race gets a grey pill).",
         "section": "colors"
       },
       {
         "name": "The Red Means On Air Rule",
-        "body": "Broadcast red means on air: the LIVE block (only while some guild's live state is really `live`) and the \"Nu live\" strip of streams that are live now. Raiding itself is jade.",
+        "body": "Broadcast red appears only while a channel is really live, from a fresh check, and every red mark goes when it isn't. Raiding itself is jade; a failure is rose.",
         "section": "colors"
       },
       {
-        "name": "The Guild Owns Its Best Rule",
-        "body": "A guild's best effort is drawn in its own colour: the best-pull meter, the best bar in its pull strip, \"beste x%\" in its caption, the frame of its current boss, its Voortgang line and hollow kill nodes.",
+        "name": "The Owner's Colour Rule",
+        "body": "A guild's or class's colour marks that guild or class and nothing else; a guild's best effort is drawn in its own colour.",
+        "section": "colors"
+      },
+      {
+        "name": "The Quiet Timestamp Rule",
+        "body": "The update line says when the data was fetched (\"Bijgewerkt om 13:42\"), in quiet grey, never the next run and never coloured. Only data that is older than its source promises (a failed fetch, a stale Raider.IO profile) turns rose, and then with words that say so.",
         "section": "colors"
       },
       {
         "name": "The Poster Voice Rule",
-        "body": "Display and section heads are Outfit 800 uppercase with tight tracking; nothing else on the page is that heavy except the bug, the board and the Per guild rank and count.",
+        "body": "Display and headlines are Outfit 800 uppercase with tight tracking. Only the bug, buttons, switch blocks, strip keys and a few rank and count blocks share that weight.",
         "section": "typography"
       },
       {
-        "name": "The Compared Number Rule",
-        "body": "A number a visitor compares across guilds is JetBrains Mono with tabular figures.",
+        "name": "The Mono Number Rule",
+        "body": "A number a visitor compares or reads as a value (kills, ranks, pulls, dates, percentages, ilvl, countdowns) is JetBrains Mono with tabular figures.",
         "section": "typography"
       },
       {
-        "name": "The One-Line Caption Rule",
-        "body": "A section caption is one line that names the marks (\"Trede = Mythic-kill · ster = eerste Nederlandse kill · lichte kolom = raidavond\"); the explanation lives in the marks themselves, not in a paragraph.",
+        "name": "The Raider's Numbers Rule",
+        "body": "State is said the way raiders say it: kills out of the counted bosses and what was left of the current boss after the best pull (\"6/8 · nog 69,8%\"), never a fractional position (\"6,3\"). Fractions only drive drawings (track fill, line height).",
+        "section": "typography"
+      },
+      {
+        "name": "The No Caption Rule",
+        "body": "A section carries no caption explaining what is visible; the marks explain themselves (a key with the real marks, a sort chevron, \"bij alle N kills\" in place). Replaces the earlier One-Line Caption Rule (race, 2026-10-06).",
         "section": "typography"
       },
       {
         "name": "The Flat Ink Rule",
-        "body": "Surfaces separate by tone and 1px rules, never by shadow or blur.",
+        "body": "Surfaces separate by tone and 1px lines, never by shadow or blur.",
+        "section": "elevation"
+      },
+      {
+        "name": "The One Float Rule",
+        "body": "The single exception: a popover that floats over content it doesn't belong to (the race's kill-rank popover) casts one shadow, `0 8px 20px -6px rgba(0,0,0,.7)`, on ink-750 with a 1px ink-500 border and a caret. Panels that open under the bar (the Streamers panel) stay flat.",
         "section": "elevation"
       },
       {
         "name": "The One Slant Rule",
         "body": "Slants go down and to the right, on the trailing edge only. A slanted element never also gets rounded corners.",
         "section": "shapes"
+      },
+      {
+        "name": "The Data Moves It Rule",
+        "body": "A page doesn't move on load; it moves when the data does, once. A track runs from its old to its new position, swapped rows slide (FLIP, 650ms), only the new stretch of a line draws, a new kill lights in the ticker, a new boss crossfades in. Constant motion is limited to the LIVE dot and the ticker.",
+        "section": "motion"
+      },
+      {
+        "name": "The Along the Slant Rule",
+        "body": "Things that enter travel along the family slant: a wipe's leading edge leans down and to the right (bmiest.be's stage wipe, 620ms; the race news card, 420ms).",
+        "section": "motion"
+      },
+      {
+        "name": "The Reduced Motion Rule",
+        "body": "Under `prefers-reduced-motion` only colour cues remain: the ticker becomes a static scrollable row, swaps happen without travel, counts land at their final value.",
+        "section": "motion"
+      },
+      {
+        "name": "The Bitrate Rule",
+        "body": "On stream pages (overlay OBS sources): no gradients, no animation across the full width, no pure white; canvas 2560×1440.",
+        "section": "motion"
       }
     ],
     "dos": [
-      "Do take colours, fonts and radii from tokens.css variables only. tokens.css stays a byte copy of the overlay's (it carries Outfit 800 and `--live-red`).",
-      "Do keep gold for the leader, the race's first kill and the winner; jade for the race brand, live state and the CE marker.",
-      "Do show the leader's current boss (the CE boss once someone won) as a self-hosted alpha cut-out trimmed to the body, with nothing drawn on it, never past 2x its natural size.",
-      "Do mark a guild with a 1-2px outline, a rank block or a slanted chip in its colour, and draw its best effort in that colour.",
-      "Do draw marks as SVG (check, star, trophy, chevron) in the meaning colour.",
-      "Do slant the trailing edge of ribbons, pills, bars, rank blocks and boss heads; keep the bug, the language switch and the ticker flush and square.",
+      "Do take colours, fonts, spacing and motion from tokens.css variables; keep tokens.css a byte copy.",
+      "Do keep gold for what is earned, jade for brand and selection, red for on air, rose for failed or stale.",
+      "Do pick slants from the scale and keep the bug, switches, strips and ticker flush and square.",
+      "Do show the work running: live values with a quiet fetch time, real renders, real screenshots, specimens drawn from the tokens.",
+      "Do let every live block fall back to static content when its fetch fails.",
+      "Do move only when the data moves, along the slant, with `--ease-out`.",
+      "Do draw marks as SVG in one stroke family, in the meaning colour.",
       "Do let a label wrap rather than cut a number off.",
-      "Do keep a section caption to one line and put the explanation in the marks.",
-      "Do ship every string in Dutch and English (Dutch default); game names are never translated.",
-      "Do keep the CSP: script-src 'self', no inline styles; set custom properties with `style.setProperty()` only.",
-      "Do apply the stream-bitrate rules from tokens.css (no gradients, no full-width animation, no pure white) to the overlay; the race page may use the hero glow and the ticker because it is not encoded."
+      "Do ship every string in Dutch and English; game names are never translated.",
+      "Do keep the CSP on the web products: script-src 'self', no inline styles; set custom properties with `style.setProperty()`; build DOM from external names without `innerHTML`."
     ],
     "donts": [
-      "Don't put a coloured side stripe on cards, cells or rows.",
+      "Don't add drop shadows, rounded cards, blur or glass (the one popover excepted).",
+      "Don't put a coloured side stripe on cards, cells or rows (a raid-frame foot bar is not a side stripe).",
       "Don't use text glyphs (★, ✓, ▸, emoji) as icons or disclosure marks.",
-      "Don't add drop shadows, rounded cards or blur.",
-      "Don't use gold for tags, progress states, hover or lateness.",
-      "Don't show LIVE or a live dot unless the data says a guild is raiding now.",
-      "Don't dress a folded or secondary section as a section head.",
-      "Don't add bmiest branding to the race site.",
-      "Don't build it as a generic dark dashboard."
+      "Don't use gold for tags, hover, progress, lateness or project labels.",
+      "Don't show LIVE, a live dot or any red unless a fresh check says live.",
+      "Don't colour the update time; say staleness in words, in rose.",
+      "Don't explain a section in a caption.",
+      "Don't add bmiest branding to Race to Dutch First, or show the person behind bmiest anywhere.",
+      "Don't build any of it as a generic dark dashboard."
     ]
   }
 }
