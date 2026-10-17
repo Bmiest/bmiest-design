@@ -415,7 +415,7 @@ Icons and marks are drawn SVG in one stroke family (2px strokes; line caps are n
 
 ## Motion
 
-Two curves in tokens.css: `--ease` (cubic-bezier(.22,.61,.36,1)) for hover and small state changes at `--t-fast` 160ms, and `--ease-out` (cubic-bezier(.16,1,.3,1), no bounce) for anything that travels: a stage wipe, a track running, a row sliding, a card arriving. `--ease-out` is used by the race site and bmiest.be today and still has to be added to tokens.css.
+Two curves in tokens.css: `--ease` (cubic-bezier(.22,.61,.36,1)) for hover and small state changes at `--t-fast` 160ms, and `--ease-out` (cubic-bezier(.16,1,.3,1), no bounce) for anything that travels: a stage wipe, a track running, a row sliding, a card arriving. Both are in tokens.css (`--ease-out` since 2026-10-17); some race-site and bmiest.be code still writes the curve out in full.
 
 ### Named Rules
 **The Data Moves It Rule.** A page doesn't move on load; it moves when the data does, once. A track runs from its old to its new position, swapped rows slide (FLIP, 650ms), only the new stretch of a line draws, a new kill lights in the ticker, a new boss crossfades in. Constant motion is limited to the LIVE dot and the ticker.
@@ -502,7 +502,7 @@ The boss is the family's hero art on every product.
 
 ## Fonts and tokens
 
-- **tokens.css** carries colours, type families, radii, spacing and motion, and is copied byte for byte between products. It loads no fonts.
+- **tokens.css** carries colours, type families, radii, spacing and motion, and is copied byte for byte between products. It loads no fonts. There is no sync tooling: a change to it goes to all four products in one pass, by hand (last pass 2026-10-17: `--ease-out` everywhere, `--live-red` on the wishlist).
 - **fonts.css** self-hosts Outfit (300-800) and JetBrains Mono (400-700), latin + latin-ext woff2 under the SIL OFL, so a visit never asks Google. Introduced by the race site (#65, privacy); the other products still load Google Fonts through an `@import` at the top of the overlay's tokens.css and move to fonts.css at their next change.
 - **holy** (#ffffff) exists in tokens.css for the overlay's v1 stream pages only; nothing on a web page uses it.
 
@@ -547,8 +547,8 @@ Shipped by one product, offered to the others. Take the spec from the source pro
 ## Migration from the products
 
 What each product still has to change to match this file:
-- **All but the race site:** self-host fonts (fonts.css) and drop the Google Fonts `@import` from tokens.css; add `--ease-out` to tokens.css.
+- **All but the race site:** self-host fonts (fonts.css) and drop the Google Fonts `@import` from tokens.css.
 - **Overlay:** primary button slant 11px → 12px; pick hover outline ink-500 → ink-400; ticker at a constant speed instead of a fixed 56s.
 - **bmiest.be:** ticker at a constant speed instead of 9s per kill.
-- **Wishlist:** refresh tokens.css (it predates Outfit 800 and `--live-red`); its "Figure Is Mono" rule is the Mono Number Rule.
-- **Race:** none beyond the shared tokens change; its DESIGN.md's "byte copy" line now points at this file.
+- **Wishlist:** its "Figure Is Mono" rule is the Mono Number Rule.
+- **Race:** none; its DESIGN.md's "byte copy" line now points at this file.
